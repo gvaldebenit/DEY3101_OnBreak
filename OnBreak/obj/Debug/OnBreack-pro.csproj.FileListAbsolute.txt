@@ -1,0 +1,22 @@
+c:\users\56954\documents\visual studio 2015\Projects\OnBreack-pro\OnBreack-pro\bin\Debug\OnBreack-pro.exe.config
+c:\users\56954\documents\visual studio 2015\Projects\OnBreack-pro\OnBreack-pro\bin\Debug\OnBreack-pro.exe
+c:\users\56954\documents\visual studio 2015\Projects\OnBreack-pro\OnBreack-pro\bin\Debug\OnBreack-pro.pdb
+c:\users\56954\documents\visual studio 2015\Projects\OnBreack-pro\OnBreack-pro\obj\Debug\OnBreack-pro.csprojResolveAssemblyReference.cache
+c:\users\56954\documents\visual studio 2015\Projects\OnBreack-pro\OnBreack-pro\obj\Debug\Gestion Clientes.g.cs
+c:\users\56954\documents\visual studio 2015\Projects\OnBreack-pro\OnBreack-pro\obj\Debug\MainWindow.g.cs
+c:\users\56954\documents\visual studio 2015\Projects\OnBreack-pro\OnBreack-pro\obj\Debug\App.g.cs
+c:\users\56954\documents\visual studio 2015\Projects\OnBreack-pro\OnBreack-pro\obj\Debug\OnBreack-pro_MarkupCompile.cache
+c:\users\56954\documents\visual studio 2015\Projects\OnBreack-pro\OnBreack-pro\obj\Debug\OnBreack-pro_MarkupCompile.lref
+c:\users\56954\documents\visual studio 2015\Projects\OnBreack-pro\OnBreack-pro\obj\Debug\Gestion Clientes.baml
+c:\users\56954\documents\visual studio 2015\Projects\OnBreack-pro\OnBreack-pro\obj\Debug\MainWindow.baml
+c:\users\56954\documents\visual studio 2015\Projects\OnBreack-pro\OnBreack-pro\obj\Debug\OnBreack-pro.g.resources
+c:\users\56954\documents\visual studio 2015\Projects\OnBreack-pro\OnBreack-pro\obj\Debug\OnBreack_pro.Properties.Resources.resources
+c:\users\56954\documents\visual studio 2015\Projects\OnBreack-pro\OnBreack-pro\obj\Debug\OnBreack-pro.csproj.GenerateResource.Cache
+c:\users\56954\documents\visual studio 2015\Projects\OnBreack-pro\OnBreack-pro\obj\Debug\OnBreack-pro.exe
+c:\users\56954\documents\visual studio 2015\Projects\OnBreack-pro\OnBreack-pro\obj\Debug\OnBreack-pro.pdb
+C:\Users\56954\Documents\Visual Studio 2015\Projects\OnBreack-pro\OnBreack-pro\obj\Debug\Gestion Contratos.g.cs
+C:\Users\56954\Documents\Visual Studio 2015\Projects\OnBreack-pro\OnBreack-pro\obj\Debug\Listado Clientes.g.cs
+C:\Users\56954\Documents\Visual Studio 2015\Projects\OnBreack-pro\OnBreack-pro\obj\Debug\Listado_Contactos.g.cs
+C:\Users\56954\Documents\Visual Studio 2015\Projects\OnBreack-pro\OnBreack-pro\obj\Debug\Gestion Contratos.baml
+C:\Users\56954\Documents\Visual Studio 2015\Projects\OnBreack-pro\OnBreack-pro\obj\Debug\Listado Clientes.baml
+C:\Users\56954\Documents\Visual Studio 2015\Projects\OnBreack-pro\OnBreack-pro\obj\Debug\Listado_Contactos.baml

@@ -1,0 +1,74 @@
+﻿<Controls:MetroWindow x:Class="OnBreak.ListadoClientes"
+        xmlns:Controls="http://metro.mahapps.com/winfx/xaml/controls"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:OnBreak"
+        mc:Ignorable="d"
+        BorderThickness="0" 
+        GlowBrush="Black"              
+        Title="Listado de Clientes" Height="335" Width="890" ResizeMode="NoResize" Icon="Resources/Icons/white_logo_color_background.jpg" WindowStartupLocation="CenterScreen" SizeToContent="WidthAndHeight" Background="#FFC5DEEA" Closing="MetroWindow_Closing">
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="20"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="40"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="40"/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Orientation="Vertical" Grid.Row="1" Grid.Column="1" >
+
+            <!-- Labels -->
+            <StackPanel Orientation="Horizontal">
+                <Label x:Name="lblRut" Content="Rut" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top"/>
+                <Label x:Name="lblTipoEmpresa" Content="Tipo Empresa" HorizontalAlignment="Left" Margin="146,0,0,0" VerticalAlignment="Top"/>
+                <Label x:Name="lblActividadEmpresa" Content="Actividad Empresa" HorizontalAlignment="Left" Margin="180,0,0,0" VerticalAlignment="Top"/>
+            </StackPanel>
+
+            <!-- Textbox y Botones -->
+            <StackPanel Orientation="Horizontal">
+                <TextBox x:Name="txtRut" HorizontalAlignment="Left" Height="26" Margin="0,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="125" KeyUp="txtRut_KeyUp" Controls:TextBoxHelper.Watermark="11111111-1" Grid.Column="1" Grid.Row="2"/>
+                <ComboBox x:Name="cboTipoEmpresa" DisplayMemberPath="Descripcion" SelectedValuePath="Id" HorizontalAlignment="Left" Margin="50,0,0,0" VerticalAlignment="Top" Width="125" Controls:TextBoxHelper.Watermark="Seleccione Valor" Grid.Column="3" Height="26" Grid.Row="2"/>
+                <Button x:Name="btnFiltrarTipoEmpresa" Content="Filtrar" HorizontalAlignment="Left" Margin="10,2,0,0" VerticalAlignment="Top" Width="75" Height="25" Click="btnFiltrarTipoEmpresa_Click" Grid.Column="4" Grid.Row="2" Grid.RowSpan="2"/>
+                <ComboBox x:Name="cboActividadEmpresa" DisplayMemberPath="Descripcion" SelectedValuePath="Id" HorizontalAlignment="Left" Margin="50,0,0,0" VerticalAlignment="Top" Width="125" Controls:TextBoxHelper.Watermark="Seleccione Valor" Grid.Column="6" Height="26" Grid.Row="2"/>
+                <Button x:Name="btnFiltrarActividadEmpresa" Content="Filtrar" HorizontalAlignment="Left" Margin="10,2,0,0" VerticalAlignment="Top" Width="75" Height="25" Click="btnFiltrarActividadEmpresa_Click" Grid.Column="7" Grid.Row="2" Grid.RowSpan="2" />
+            </StackPanel>
+            
+            <!-- DataGrid -->
+            <DataGrid x:Name="dgClientes" AutoGenerateColumns="False" Margin="0,20,0,0" VerticalAlignment="Top" IsReadOnly="True" MinHeight="155">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="RUT" Binding="{Binding Rut}"/>
+                    <DataGridTextColumn Header="RAZON SOCIAL" Binding="{Binding RazonSocial}"/>
+                    <DataGridTextColumn Header="NOMBRE CONTACTO" Binding="{Binding NombreContacto}"/>
+                    <DataGridTextColumn Header="EMAIL CONTACTO" Binding="{Binding EmailContacto}"/>
+                    <DataGridTextColumn Header="DIRECCION" Binding="{Binding Direccion}"/>
+                    <DataGridTextColumn Header="TELEFONO" Binding="{Binding Telefono}"/>
+                    <DataGridTextColumn Header="ACT.EMPRESA" Binding="{Binding ActividadEmpresa.Descripcion}"/>
+                    <DataGridTextColumn Header="TIPO EMPRESA" Binding="{Binding TipoEmpresa.Descripcion}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+
+            <!-- StackPanel de Botones -->
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,10,0,0" VerticalAlignment="Bottom">
+                <Button x:Name="btnRefrescar" Content="Refrescar" HorizontalAlignment="Left" Margin="0,0,0,0" Width="75" Click="btnRefrescar_Click"/>
+                <Button x:Name="btnSalir" Content="Salir" HorizontalAlignment="Left" Margin="29,0,0,0" Width="75" Background="{DynamicResource AccentColorBrush}" Click="btnSalir_Click"/>
+            </StackPanel>
+
+        </StackPanel>
+
+    </Grid>
+
+    <!-- Switch Alto Contraste -->
+    <Controls:MetroWindow.RightWindowCommands>
+        <Controls:WindowCommands>
+            <Controls:ToggleSwitch x:Name="altoContraste" Content="Alto Contraste" IsCheckedChanged="ToggleSwitch_IsCheckedChanged" />
+        </Controls:WindowCommands>
+    </Controls:MetroWindow.RightWindowCommands>
+
+</Controls:MetroWindow>

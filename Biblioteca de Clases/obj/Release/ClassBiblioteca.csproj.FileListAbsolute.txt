@@ -1,0 +1,6 @@
+C:\Users\Yhodarks\source\repos\OnBreak\Biblioteca de Clases\bin\Release\ClassBiblioteca.dll
+C:\Users\Yhodarks\source\repos\OnBreak\Biblioteca de Clases\bin\Release\ClassBiblioteca.pdb
+C:\Users\Yhodarks\source\repos\OnBreak\Biblioteca de Clases\obj\Release\ClassBiblioteca.csprojAssemblyReference.cache
+C:\Users\Yhodarks\source\repos\OnBreak\Biblioteca de Clases\obj\Release\ClassBiblioteca.csproj.CoreCompileInputs.cache
+C:\Users\Yhodarks\source\repos\OnBreak\Biblioteca de Clases\obj\Release\ClassBiblioteca.dll
+C:\Users\Yhodarks\source\repos\OnBreak\Biblioteca de Clases\obj\Release\ClassBiblioteca.pdb

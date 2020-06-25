@@ -1,0 +1,73 @@
+﻿<Controls:MetroWindow x:Class="OnBreak.Menu"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:Controls="http://metro.mahapps.com/winfx/xaml/controls"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:OnBreak"
+        mc:Ignorable="d"
+        BorderThickness="0" 
+        GlowBrush="Black"              
+        Title="Menu" Height="372" Width="500" Foreground="White" Icon="Resources/Icons/white_logo_color_background.jpg" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Background="#FFC5DEEA" Closing="MetroWindow_Closing">
+
+    <!-- Switch -->
+    <Controls:MetroWindow.RightWindowCommands>
+        <Controls:WindowCommands>
+            <Controls:ToggleSwitch x:Name="altoContraste" Content="Alto Contraste" IsCheckedChanged="ToggleSwitch_IsCheckedChanged" />
+        </Controls:WindowCommands>
+    </Controls:MetroWindow.RightWindowCommands>
+    <!-- Grid -->
+    <Grid HorizontalAlignment="Right" Width="500" Height="340"  >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"/>
+            <!-- Cool comment -->
+            <ColumnDefinition Width="140"/>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="140"/>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="140"/>
+            <ColumnDefinition Width="20"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- Columna 1 -->
+        <Image Grid.Column ="1" Source="/Resources/Icons/white_logo_color_background.jpg" HorizontalAlignment="Left" Height="140" Margin="0,20,0,0" VerticalAlignment="Top" Width="140"/>
+        <Controls:Tile x:Name="ListadoClientes" Grid.Column="1" Margin="0,180,0,20" Title="Listado Clientes" Height="140" FontSize="32" FontWeight="Bold" HorizontalTitleAlignment="Center" Width="Auto" Click="ListadoClientes_Click">
+            <Controls:Tile.Effect>
+                <DropShadowEffect/>
+            </Controls:Tile.Effect>
+            <Image Source="Resources/Icons/iconfinder_General_Office_08_3592814.ico" Height="80" Stretch="Fill" Margin="0,0,0,30"/>
+        </Controls:Tile>
+
+        <!-- Columna 2 -->
+        <Controls:Tile Grid.Column="3" x:Name="GestionClientes"  Margin="0,20,0,180"  Title="Gestionar Clientes" Height="140" FontSize="22" FontWeight="Bold" Width="140" HorizontalAlignment="Center" HorizontalTitleAlignment="Center" HorizontalContentAlignment="Center" Padding="0" UseLayoutRounding="True" TitleFontSize="14" Click="GestionClientes_Click">
+            <Controls:Tile.Effect>
+                <DropShadowEffect/>
+            </Controls:Tile.Effect>
+            <Image Source="Resources/Icons/iconfinder_General_Office_33_3592825.ico" Height="80" Stretch="Fill" Margin="0,0,0,25"/>
+        </Controls:Tile>
+
+        <Controls:Tile Grid.Column="3" x:Name="ListadoContratos" Margin="0,180,0,20" Title="Listado Contratos" Height="Auto" FontSize="20" FontWeight="Bold" Width="Auto" HorizontalTitleAlignment="Center" TitleFontSize="14" KeepDragging="False" Click="ListadoContratos_Click" >
+            <Controls:Tile.Effect>
+                <DropShadowEffect/>
+            </Controls:Tile.Effect>
+            <Image Source ="Resources/Icons/iconfinder_General_Office_26_3592822.ico" Height="81" Stretch="Fill" Margin="0,0,0,20"/>
+        </Controls:Tile>
+
+        <!-- Columna 3 -->
+        <Controls:Tile Grid.Column="5" x:Name="GestionContratos" Margin="0,20,0,180" Title="Gestionar Contratos" Height="Auto" FontSize="20" FontWeight="Bold" Width="Auto" HorizontalTitleAlignment="Center" Click="GestionContratos_Click" TitleFontSize="13" >
+            <Controls:Tile.Effect>
+                <DropShadowEffect/>
+            </Controls:Tile.Effect>
+            <Image Source="Resources/Icons/iconfinder_General_Office_01_3592874.ico" Height="84" Stretch="Fill" Width="85" Margin="0,0,0,18"/>
+        </Controls:Tile>
+
+        <Controls:Tile Grid.Column="5" x:Name="Salir" Margin="0,180,0,20" Title="Salir" Height="Auto" FontSize="20" FontWeight="Bold" Width="Auto" HorizontalTitleAlignment="Center" Click="Salir_Click">
+            <Controls:Tile.Effect>
+                <DropShadowEffect/>
+            </Controls:Tile.Effect>
+            <Image Source="/Resources/Icons/iconfinder_Exit_Arrow_Door_Signout_Out_Close_1654372.ico" Height="80" Stretch="Fill" Margin="0,0,0,30"/>
+        </Controls:Tile>
+
+    </Grid>
+
+</Controls:MetroWindow>

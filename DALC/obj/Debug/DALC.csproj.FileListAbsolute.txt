@@ -1,0 +1,12 @@
+C:\Users\Yhodarks\source\repos\OnBreak\DALC\bin\Debug\DALC.dll.config
+C:\Users\Yhodarks\source\repos\OnBreak\DALC\bin\Debug\DALC.dll
+C:\Users\Yhodarks\source\repos\OnBreak\DALC\bin\Debug\DALC.pdb
+C:\Users\Yhodarks\source\repos\OnBreak\DALC\bin\Debug\EntityFramework.dll
+C:\Users\Yhodarks\source\repos\OnBreak\DALC\bin\Debug\EntityFramework.xml
+C:\Users\Yhodarks\source\repos\OnBreak\DALC\obj\Debug\DALC.csprojAssemblyReference.cache
+C:\Users\Yhodarks\source\repos\OnBreak\DALC\obj\Debug\DALC.csproj.CoreCompileInputs.cache
+C:\Users\Yhodarks\source\repos\OnBreak\DALC\obj\Debug\DALC.csproj.CopyComplete
+C:\Users\Yhodarks\source\repos\OnBreak\DALC\obj\Debug\DALC.dll
+C:\Users\Yhodarks\source\repos\OnBreak\DALC\obj\Debug\DALC.pdb
+C:\Users\Yhodarks\source\repos\OnBreak\DALC\bin\Debug\OnbreakDBLocal.mdf
+C:\Users\Yhodarks\source\repos\OnBreak\DALC\bin\Debug\OnbreakDBLocal_log.ldf
