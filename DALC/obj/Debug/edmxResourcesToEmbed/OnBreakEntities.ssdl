@@ -7,6 +7,17 @@
     <Property Name="IdActividadEmpresa" Type="int" Nullable="false" />
     <Property Name="Descripcion" Type="nvarchar" MaxLength="20" Nullable="false" />
   </EntityType>
+  <EntityType Name="Cenas">
+    <Key>
+      <PropertyRef Name="Numero" />
+    </Key>
+    <Property Name="Numero" Type="nvarchar" MaxLength="12" Nullable="false" />
+    <Property Name="IdTipoAmbientacion" Type="int" Nullable="false" />
+    <Property Name="MusicaAmbiental" Type="bit" Nullable="false" />
+    <Property Name="LocalOnBreak" Type="bit" Nullable="false" />
+    <Property Name="OtroLocalOnBreak" Type="bit" Nullable="false" />
+    <Property Name="ValorArriendo" Type="float" Nullable="false" />
+  </EntityType>
   <EntityType Name="Cliente">
     <Key>
       <PropertyRef Name="RutCliente" />
@@ -20,25 +31,42 @@
     <Property Name="IdActividadEmpresa" Type="int" Nullable="false" />
     <Property Name="IdTipoEmpresa" Type="int" Nullable="false" />
   </EntityType>
+  <EntityType Name="Cocktail">
+    <Key>
+      <PropertyRef Name="Numero" />
+    </Key>
+    <Property Name="Numero" Type="nvarchar" MaxLength="12" Nullable="false" />
+    <Property Name="IdTipoAmbientacion" Type="int" Nullable="false" />
+    <Property Name="Ambientacion" Type="bit" Nullable="false" />
+    <Property Name="MusicaAmbiental" Type="bit" Nullable="false" />
+    <Property Name="MusicaCliente" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CoffeeBreak">
+    <Key>
+      <PropertyRef Name="Numero" />
+    </Key>
+    <Property Name="Numero" Type="nvarchar" MaxLength="12" Nullable="false" />
+    <Property Name="Vegetariana" Type="bit" Nullable="false" />
+  </EntityType>
   <EntityType Name="Contrato">
     <Key>
       <PropertyRef Name="Numero" />
     </Key>
     <Property Name="Numero" Type="nvarchar" MaxLength="12" Nullable="false" />
+    <Property Name="Creacion" Type="datetime" Nullable="false" />
+    <Property Name="Termino" Type="datetime" />
     <Property Name="RutCliente" Type="nvarchar" MaxLength="10" Nullable="false" />
-    <Property Name="NombreEvento" Type="nvarchar" MaxLength="50" Nullable="false" />
-    <Property Name="IdTipoEvento" Type="int" Nullable="false" />
-    <Property Name="IdModalidad" Type="nvarchar" MaxLength="5" Nullable="false" />
     <Property Name="Direccion" Type="nvarchar" MaxLength="30" Nullable="false" />
-    <Property Name="Asistentes" Type="int" Nullable="false" />
-    <Property Name="PersonalAdicional" Type="int" Nullable="false" />
-    <Property Name="ValorTotalContrato" Type="float" Nullable="false" />
+    <Property Name="NombreEvento" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="IdModalidad" Type="nvarchar" MaxLength="5" Nullable="false" />
+    <Property Name="IdTipoEvento" Type="int" Nullable="false" />
     <Property Name="FechaHoraInicio" Type="datetime" Nullable="false" />
     <Property Name="FechaHoraTermino" Type="datetime" Nullable="false" />
-    <Property Name="Creacion" Type="datetime" Nullable="false" />
-    <Property Name="Termino" Type="datetime" Nullable="false" />
-    <Property Name="Observaciones" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="Asistentes" Type="int" Nullable="false" />
+    <Property Name="PersonalAdicional" Type="int" Nullable="false" />
     <Property Name="Realizado" Type="bit" Nullable="false" />
+    <Property Name="ValorTotalContrato" Type="float" Nullable="false" />
+    <Property Name="Observaciones" Type="nvarchar" MaxLength="250" Nullable="false" />
   </EntityType>
   <EntityType Name="ModalidadServicio">
     <Key>
@@ -50,6 +78,13 @@
     <Property Name="Nombre" Type="nvarchar" MaxLength="20" Nullable="false" />
     <Property Name="ValorBase" Type="float" Nullable="false" />
     <Property Name="PersonalBase" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TipoAmbientacion">
+    <Key>
+      <PropertyRef Name="IdTipoAmbientacion" />
+    </Key>
+    <Property Name="IdTipoAmbientacion" Type="int" Nullable="false" />
+    <Property Name="Descripcion" Type="nvarchar" MaxLength="15" Nullable="false" />
   </EntityType>
   <EntityType Name="TipoEmpresa">
     <Key>
@@ -73,6 +108,18 @@
     <Property Name="usuario" Type="varchar" MaxLength="20" Nullable="false" />
     <Property Name="contrasena" Type="varchar" MaxLength="20" Nullable="false" />
   </EntityType>
+  <Association Name="Cena_TipoAmbientacion_FK1">
+    <End Role="TipoAmbientacion" Type="Self.TipoAmbientacion" Multiplicity="1" />
+    <End Role="Cenas" Type="Self.Cenas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TipoAmbientacion">
+        <PropertyRef Name="IdTipoAmbientacion" />
+      </Principal>
+      <Dependent Role="Cenas">
+        <PropertyRef Name="IdTipoAmbientacion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="Cliente_ActividadEmpresa_FK1">
     <End Role="ActividadEmpresa" Type="Self.ActividadEmpresa" Multiplicity="1" />
     <End Role="Cliente" Type="Self.Cliente" Multiplicity="*" />
@@ -97,6 +144,30 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="Cocktail_TipoAmbientacion_FK1">
+    <End Role="TipoAmbientacion" Type="Self.TipoAmbientacion" Multiplicity="1" />
+    <End Role="Cocktail" Type="Self.Cocktail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TipoAmbientacion">
+        <PropertyRef Name="IdTipoAmbientacion" />
+      </Principal>
+      <Dependent Role="Cocktail">
+        <PropertyRef Name="IdTipoAmbientacion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Contrato_Cenas_FK1">
+    <End Role="Contrato" Type="Self.Contrato" Multiplicity="1" />
+    <End Role="Cenas" Type="Self.Cenas" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Contrato">
+        <PropertyRef Name="Numero" />
+      </Principal>
+      <Dependent Role="Cenas">
+        <PropertyRef Name="Numero" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="Contrato_Cliente_FK1">
     <End Role="Cliente" Type="Self.Cliente" Multiplicity="1" />
     <End Role="Contrato" Type="Self.Contrato" Multiplicity="*" />
@@ -106,6 +177,30 @@
       </Principal>
       <Dependent Role="Contrato">
         <PropertyRef Name="RutCliente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Contrato_Cocktail_FK1">
+    <End Role="Contrato" Type="Self.Contrato" Multiplicity="1" />
+    <End Role="Cocktail" Type="Self.Cocktail" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Contrato">
+        <PropertyRef Name="Numero" />
+      </Principal>
+      <Dependent Role="Cocktail">
+        <PropertyRef Name="Numero" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Contrato_CoffeeBreak_FK1">
+    <End Role="Contrato" Type="Self.Contrato" Multiplicity="1" />
+    <End Role="CoffeeBreak" Type="Self.CoffeeBreak" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Contrato">
+        <PropertyRef Name="Numero" />
+      </Principal>
+      <Dependent Role="CoffeeBreak">
+        <PropertyRef Name="Numero" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -137,12 +232,20 @@
   </Association>
   <EntityContainer Name="OnBreakModelStoreContainer">
     <EntitySet Name="ActividadEmpresa" EntityType="Self.ActividadEmpresa" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Cenas" EntityType="Self.Cenas" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Cliente" EntityType="Self.Cliente" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Cocktail" EntityType="Self.Cocktail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CoffeeBreak" EntityType="Self.CoffeeBreak" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Contrato" EntityType="Self.Contrato" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ModalidadServicio" EntityType="Self.ModalidadServicio" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TipoAmbientacion" EntityType="Self.TipoAmbientacion" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TipoEmpresa" EntityType="Self.TipoEmpresa" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TipoEvento" EntityType="Self.TipoEvento" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Usuario" EntityType="Self.Usuario" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="Cena_TipoAmbientacion_FK1" Association="Self.Cena_TipoAmbientacion_FK1">
+      <End Role="TipoAmbientacion" EntitySet="TipoAmbientacion" />
+      <End Role="Cenas" EntitySet="Cenas" />
+    </AssociationSet>
     <AssociationSet Name="Cliente_ActividadEmpresa_FK1" Association="Self.Cliente_ActividadEmpresa_FK1">
       <End Role="ActividadEmpresa" EntitySet="ActividadEmpresa" />
       <End Role="Cliente" EntitySet="Cliente" />
@@ -151,9 +254,25 @@
       <End Role="TipoEmpresa" EntitySet="TipoEmpresa" />
       <End Role="Cliente" EntitySet="Cliente" />
     </AssociationSet>
+    <AssociationSet Name="Cocktail_TipoAmbientacion_FK1" Association="Self.Cocktail_TipoAmbientacion_FK1">
+      <End Role="TipoAmbientacion" EntitySet="TipoAmbientacion" />
+      <End Role="Cocktail" EntitySet="Cocktail" />
+    </AssociationSet>
+    <AssociationSet Name="Contrato_Cenas_FK1" Association="Self.Contrato_Cenas_FK1">
+      <End Role="Contrato" EntitySet="Contrato" />
+      <End Role="Cenas" EntitySet="Cenas" />
+    </AssociationSet>
     <AssociationSet Name="Contrato_Cliente_FK1" Association="Self.Contrato_Cliente_FK1">
       <End Role="Cliente" EntitySet="Cliente" />
       <End Role="Contrato" EntitySet="Contrato" />
+    </AssociationSet>
+    <AssociationSet Name="Contrato_Cocktail_FK1" Association="Self.Contrato_Cocktail_FK1">
+      <End Role="Contrato" EntitySet="Contrato" />
+      <End Role="Cocktail" EntitySet="Cocktail" />
+    </AssociationSet>
+    <AssociationSet Name="Contrato_CoffeeBreak_FK1" Association="Self.Contrato_CoffeeBreak_FK1">
+      <End Role="Contrato" EntitySet="Contrato" />
+      <End Role="CoffeeBreak" EntitySet="CoffeeBreak" />
     </AssociationSet>
     <AssociationSet Name="Contrato_ModalidadEvento_FK1" Association="Self.Contrato_ModalidadEvento_FK1">
       <End Role="ModalidadServicio" EntitySet="ModalidadServicio" />

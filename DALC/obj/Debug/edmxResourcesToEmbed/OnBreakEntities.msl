@@ -9,6 +9,18 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="Cenas">
+      <EntityTypeMapping TypeName="OnBreakModel.Cenas">
+        <MappingFragment StoreEntitySet="Cenas">
+          <ScalarProperty Name="Numero" ColumnName="Numero" />
+          <ScalarProperty Name="IdTipoAmbientacion" ColumnName="IdTipoAmbientacion" />
+          <ScalarProperty Name="MusicaAmbiental" ColumnName="MusicaAmbiental" />
+          <ScalarProperty Name="LocalOnBreak" ColumnName="LocalOnBreak" />
+          <ScalarProperty Name="OtroLocalOnBreak" ColumnName="OtroLocalOnBreak" />
+          <ScalarProperty Name="ValorArriendo" ColumnName="ValorArriendo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="Cliente">
       <EntityTypeMapping TypeName="OnBreakModel.Cliente">
         <MappingFragment StoreEntitySet="Cliente">
@@ -23,24 +35,43 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="Cocktail">
+      <EntityTypeMapping TypeName="OnBreakModel.Cocktail">
+        <MappingFragment StoreEntitySet="Cocktail">
+          <ScalarProperty Name="Numero" ColumnName="Numero" />
+          <ScalarProperty Name="IdTipoAmbientacion" ColumnName="IdTipoAmbientacion" />
+          <ScalarProperty Name="Ambientacion" ColumnName="Ambientacion" />
+          <ScalarProperty Name="MusicaAmbiental" ColumnName="MusicaAmbiental" />
+          <ScalarProperty Name="MusicaCliente" ColumnName="MusicaCliente" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CoffeeBreak">
+      <EntityTypeMapping TypeName="OnBreakModel.CoffeeBreak">
+        <MappingFragment StoreEntitySet="CoffeeBreak">
+          <ScalarProperty Name="Numero" ColumnName="Numero" />
+          <ScalarProperty Name="Vegetariana" ColumnName="Vegetariana" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="Contrato">
       <EntityTypeMapping TypeName="OnBreakModel.Contrato">
         <MappingFragment StoreEntitySet="Contrato">
           <ScalarProperty Name="Numero" ColumnName="Numero" />
-          <ScalarProperty Name="RutCliente" ColumnName="RutCliente" />
-          <ScalarProperty Name="NombreEvento" ColumnName="NombreEvento" />
-          <ScalarProperty Name="IdTipoEvento" ColumnName="IdTipoEvento" />
-          <ScalarProperty Name="IdModalidad" ColumnName="IdModalidad" />
-          <ScalarProperty Name="Direccion" ColumnName="Direccion" />
-          <ScalarProperty Name="Asistentes" ColumnName="Asistentes" />
-          <ScalarProperty Name="PersonalAdicional" ColumnName="PersonalAdicional" />
-          <ScalarProperty Name="ValorTotalContrato" ColumnName="ValorTotalContrato" />
-          <ScalarProperty Name="FechaHoraInicio" ColumnName="FechaHoraInicio" />
-          <ScalarProperty Name="FechaHoraTermino" ColumnName="FechaHoraTermino" />
           <ScalarProperty Name="Creacion" ColumnName="Creacion" />
           <ScalarProperty Name="Termino" ColumnName="Termino" />
-          <ScalarProperty Name="Observaciones" ColumnName="Observaciones" />
+          <ScalarProperty Name="RutCliente" ColumnName="RutCliente" />
+          <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+          <ScalarProperty Name="NombreEvento" ColumnName="NombreEvento" />
+          <ScalarProperty Name="IdModalidad" ColumnName="IdModalidad" />
+          <ScalarProperty Name="IdTipoEvento" ColumnName="IdTipoEvento" />
+          <ScalarProperty Name="FechaHoraInicio" ColumnName="FechaHoraInicio" />
+          <ScalarProperty Name="FechaHoraTermino" ColumnName="FechaHoraTermino" />
+          <ScalarProperty Name="Asistentes" ColumnName="Asistentes" />
+          <ScalarProperty Name="PersonalAdicional" ColumnName="PersonalAdicional" />
           <ScalarProperty Name="Realizado" ColumnName="Realizado" />
+          <ScalarProperty Name="ValorTotalContrato" ColumnName="ValorTotalContrato" />
+          <ScalarProperty Name="Observaciones" ColumnName="Observaciones" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -52,6 +83,14 @@
           <ScalarProperty Name="Nombre" ColumnName="Nombre" />
           <ScalarProperty Name="ValorBase" ColumnName="ValorBase" />
           <ScalarProperty Name="PersonalBase" ColumnName="PersonalBase" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TipoAmbientacion">
+      <EntityTypeMapping TypeName="OnBreakModel.TipoAmbientacion">
+        <MappingFragment StoreEntitySet="TipoAmbientacion">
+          <ScalarProperty Name="IdTipoAmbientacion" ColumnName="IdTipoAmbientacion" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

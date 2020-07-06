@@ -47,5 +47,5 @@ C:\Users\Yhodarks\source\repos\OnBreak\OnBreak\bin\Debug\EntityFramework.xml
 C:\Users\Yhodarks\source\repos\OnBreak\OnBreak\bin\Debug\FluentValidation.dll
 C:\Users\Yhodarks\source\repos\OnBreak\OnBreak\bin\Debug\System.ComponentModel.Annotations.dll
 C:\Users\Yhodarks\source\repos\OnBreak\OnBreak\bin\Debug\FluentValidation.xml
-C:\Users\Yhodarks\source\repos\OnBreak\OnBreak\bin\Debug\OnbreakDBLocal.mdf
-C:\Users\Yhodarks\source\repos\OnBreak\OnBreak\bin\Debug\OnbreakDBLocal_log.ldf
+C:\Users\Yhodarks\source\repos\OnBreak\OnBreak\bin\Debug\OnBreakLocal.mdf
+C:\Users\Yhodarks\source\repos\OnBreak\OnBreak\bin\Debug\OnBreakLocal_log.ldf

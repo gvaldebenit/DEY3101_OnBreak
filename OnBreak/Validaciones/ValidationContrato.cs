@@ -24,8 +24,14 @@ namespace OnBreak.Validaciones
                 .Length(3, 30).WithMessage("Dirección debe tener entre 3 y 30 caracteres");
             RuleFor(c => c.Total).GreaterThan(0).WithMessage("Debe presionar el Botón Calcular");
             RuleFor(c => c.ModalidadServicio).NotNull().WithMessage("Debe seleccionar una Modalidad");
-            RuleFor(c => c.InicioEvento).NotNull().WithMessage("Inicio Evento no puede estar vacío");
-            RuleFor(c => c.TerminoEvento).NotNull().WithMessage("Termino Evento no puede estar vacío");
+            RuleFor(c => c.InicioEvento)
+                .NotNull().WithMessage("Inicio Evento no puede estar vacío")
+                .GreaterThan(DateTime.Now).WithMessage("Inicio del Evento no puede ser menor a Fecha Actual")
+                .LessThanOrEqualTo(DateTime.Now.AddMonths(10)).WithMessage("Inicio de Evento no puede ser mayor a 10 meses desde Fecha Actual");
+            RuleFor(c => c.TerminoEvento)
+                .NotNull().WithMessage("Termino Evento no puede estar vacío")
+                .GreaterThan(c => c.InicioEvento).WithMessage("Termino del Evento no puede ser menor a Inicio del Evento")
+                .LessThanOrEqualTo(c => c.InicioEvento.AddHours(24)).WithMessage("Termino de Evento no puede Exceder 24 horas desde el Inicio del Evento");
             RuleFor(c => c.Observaciones)
                 .Cascade(CascadeMode.StopOnFirstFailure)
                 .NotEmpty().WithMessage("Observaciones no puede estar vacío")

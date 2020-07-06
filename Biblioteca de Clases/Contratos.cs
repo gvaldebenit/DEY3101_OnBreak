@@ -20,9 +20,9 @@ namespace ClassBiblioteca
         private DateTime _creacionContrato;
         private DateTime _inicioEvento;
         private DateTime _terminoEvento;
-        private DateTime _terminoContrato;
+        private DateTime? _terminoContrato;
         private string _observaciones;
-        private bool _vigente;
+        private bool _realizado;
 
         //Metodos de Atributos
         public Clientes Cliente { get => _cliente; set => _cliente = value; }
@@ -36,9 +36,9 @@ namespace ClassBiblioteca
         public DateTime CreacionContrato { get => _creacionContrato; set => _creacionContrato = value; }
         public DateTime InicioEvento { get => _inicioEvento; set => _inicioEvento = value; }
         public DateTime TerminoEvento { get => _terminoEvento; set => _terminoEvento = value; }
-        public DateTime TerminoContrato { get => _terminoContrato; set => _terminoContrato = value; }
+        public DateTime? TerminoContrato { get => _terminoContrato; set => _terminoContrato = value; }
         public string Observaciones { get => _observaciones; set => _observaciones = value; }
-        public bool Vigente { get => _vigente; set => _vigente = value; }
+        public bool Realizado { get => _realizado; set => _realizado = value; }
 
 
         //Constructores
@@ -58,11 +58,11 @@ namespace ClassBiblioteca
             this.PersonalAdicional = 0;
             this.Total = 0;
             this.CreacionContrato = DateTime.Now;
-            this.TerminoContrato = DateTime.ParseExact("02011753000000", "ddMMyyyyHHmmss", System.Globalization.CultureInfo.InvariantCulture);
+            this.TerminoContrato = null;
             this.InicioEvento = DateTime.MinValue;
             this.TerminoEvento = DateTime.MinValue;
             this.Observaciones = String.Empty;
-            this.Vigente = true;
+            this.Realizado = true;
         }
 
     }

@@ -16,8 +16,10 @@ namespace DALC
     {
         public string Numero { get; set; }
         public System.DateTime Creacion { get; set; }
-        public System.DateTime Termino { get; set; }
+        public Nullable<System.DateTime> Termino { get; set; }
         public string RutCliente { get; set; }
+        public string Direccion { get; set; }
+        public string NombreEvento { get; set; }
         public string IdModalidad { get; set; }
         public int IdTipoEvento { get; set; }
         public System.DateTime FechaHoraInicio { get; set; }

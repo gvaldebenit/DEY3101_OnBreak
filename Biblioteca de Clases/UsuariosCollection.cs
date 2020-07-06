@@ -11,8 +11,8 @@ namespace ClassBiblioteca
     public class UsuariosCollection
     {
         //Conexion a BD
-        private OnBreakEntitiesLocal _db = new OnBreakEntitiesLocal();
-        public OnBreakEntitiesLocal DB { get => _db; set => _db = value; }
+        private OnBreakEntities _db = new OnBreakEntities();
+        public OnBreakEntities DB { get => _db; set => _db = value; }
 
         //Método para leer todo
         public IEnumerable<Object> LeerUsuarios()

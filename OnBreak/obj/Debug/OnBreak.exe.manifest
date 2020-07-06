@@ -42,14 +42,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ClassBiblioteca.dll" size="33280">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ClassBiblioteca.dll" size="35328">
       <assemblyIdentity name="ClassBiblioteca" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>1hrJZngwJlBG+D50uSY0Cl1wINz6x6qWrArAdgLM5tk=</dsig:DigestValue>
+        <dsig:DigestValue>4hmD4w9/Zqy3CTByjs818n99VtNYr/OiBUkFOnesbdg=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -66,14 +66,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DALC.dll" size="36864">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DALC.dll" size="55296">
       <assemblyIdentity name="DALC" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>B8l7Lx3aWMNtRHDn6OnClYTf/IgshKNEtMHKtZIxzrA=</dsig:DigestValue>
+        <dsig:DigestValue>ltdqm3viqmsQMrNLQB6aKbfFpWPS14pVxmqwODPjI+Y=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -114,14 +114,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="OnBreak.exe" size="4965880">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="OnBreak.exe" size="4966904">
       <assemblyIdentity name="OnBreak" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>mebTUULXlnhbY3d5zcPfFl7qSWJAUj2hTKb8Ab17Wa0=</dsig:DigestValue>
+        <dsig:DigestValue>FLj4uFbk6tsTTC9R1ycdn7uVDvJuP+zAu/daZLM+WsE=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -149,13 +149,13 @@
       </hash>
     </dependentAssembly>
   </dependency>
-  <file name="OnBreak.exe.config" size="622">
+  <file name="OnBreak.exe.config" size="674">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>MrvkP+0UFR9/JzxlpfcEMUrmJKHc8fYYzIKwkJ808vc=</dsig:DigestValue>
+      <dsig:DigestValue>OkgZ1LNVWkmgPQXidclBFVICDXNCPva/BYHq8ZgWwto=</dsig:DigestValue>
     </hash>
   </file>
 </asmv1:assembly>

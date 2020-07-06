@@ -50,7 +50,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ActividadEmpresas.cs" />
+    <Compile Include="Ambientacion.cs" />
+    <Compile Include="Cenas.cs" />
     <Compile Include="ClientesCollection.cs" />
+    <Compile Include="Cocktails.cs" />
+    <Compile Include="CoffeBreaks.cs" />
     <Compile Include="ContratosCollection.cs" />
     <Compile Include="Clientes.cs" />
     <Compile Include="Contratos.cs" />
@@ -64,7 +68,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DALC\DALC.csproj">
-      <Project>{1f73f177-b076-415f-ac95-eb75f145de30}</Project>
+      <Project>{2ff108e2-6a1a-479f-8378-635bf9c0da9e}</Project>
       <Name>DALC</Name>
     </ProjectReference>
   </ItemGroup>

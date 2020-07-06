@@ -12,8 +12,8 @@ namespace ClassBiblioteca
     public class ClientesCollection
     {
         //Conexion a BD
-        private OnBreakEntitiesLocal _db = new OnBreakEntitiesLocal();
-        public OnBreakEntitiesLocal DB { get => _db; set => _db = value; }
+        private OnBreakEntities _db = new OnBreakEntities();
+        public OnBreakEntities DB { get => _db; set => _db = value; }
 
         //Metodos Customer
         //Método para leer todo
@@ -111,11 +111,11 @@ namespace ClassBiblioteca
                 DB.SaveChanges();
                 return true;
             }
-            catch (Exception) 
+            catch (Exception)
             {
                 return false;
             }
-            
+
         }
 
         //Borrar Cliente

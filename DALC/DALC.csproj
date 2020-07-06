@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{1F73F177-B076-415F-AC95-EB75F145DE30}</ProjectGuid>
+    <ProjectGuid>{2FF108E2-6A1A-479F-8378-635BF9C0DA9E}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>DALC</RootNamespace>
@@ -64,25 +64,25 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ActividadEmpresa.cs">
-      <DependentUpon>OnBreakEntitiesLocal.tt</DependentUpon>
+      <DependentUpon>OnBreakEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Cenas.cs">
-      <DependentUpon>OnBreakEntitiesLocal.tt</DependentUpon>
+      <DependentUpon>OnBreakEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Cliente.cs">
-      <DependentUpon>OnBreakEntitiesLocal.tt</DependentUpon>
+      <DependentUpon>OnBreakEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Cocktail.cs">
-      <DependentUpon>OnBreakEntitiesLocal.tt</DependentUpon>
+      <DependentUpon>OnBreakEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="CoffeeBreak.cs">
-      <DependentUpon>OnBreakEntitiesLocal.tt</DependentUpon>
+      <DependentUpon>OnBreakEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Contrato.cs">
-      <DependentUpon>OnBreakEntitiesLocal.tt</DependentUpon>
+      <DependentUpon>OnBreakEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="ModalidadServicio.cs">
-      <DependentUpon>OnBreakEntitiesLocal.tt</DependentUpon>
+      <DependentUpon>OnBreakEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="OnBreakEntities.Context.cs">
       <AutoGen>True</AutoGen>
@@ -99,83 +99,37 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>OnBreakEntities.edmx</DependentUpon>
     </Compile>
-    <Compile Include="OnBreakEntitiesLocal.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>OnBreakEntitiesLocal.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="OnBreakEntitiesLocal.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>OnBreakEntitiesLocal.tt</DependentUpon>
-    </Compile>
-    <Compile Include="OnBreakEntitiesLocal.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>OnBreakEntitiesLocal.edmx</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TipoAmbientacion.cs">
-      <DependentUpon>OnBreakEntitiesLocal.tt</DependentUpon>
+      <DependentUpon>OnBreakEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="TipoEmpresa.cs">
-      <DependentUpon>OnBreakEntitiesLocal.tt</DependentUpon>
+      <DependentUpon>OnBreakEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="TipoEvento.cs">
-      <DependentUpon>OnBreakEntitiesLocal.tt</DependentUpon>
+      <DependentUpon>OnBreakEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Usuario.cs">
-      <DependentUpon>OnBreakEntitiesLocal.tt</DependentUpon>
+      <DependentUpon>OnBreakEntities.tt</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.Config" />
-    <EntityDeploy Include="OnBreakEntities.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>OnBreakEntities.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <None Include="OnBreakEntities.edmx.diagram">
-      <DependentUpon>OnBreakEntities.edmx</DependentUpon>
-    </None>
-    <EntityDeploy Include="OnBreakEntitiesLocal.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>OnBreakEntitiesLocal.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <None Include="OnBreakEntitiesLocal.edmx.diagram">
-      <DependentUpon>OnBreakEntitiesLocal.edmx</DependentUpon>
-    </None>
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="OnbreakDBLocal.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="OnbreakDBLocal_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <DependentUpon>OnbreakDBLocal.mdf</DependentUpon>
-    </Content>
     <Content Include="OnBreakEntities.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>OnBreakEntities.edmx</DependentUpon>
       <LastGenOutput>OnBreakEntities.Context.cs</LastGenOutput>
+      <DependentUpon>OnBreakEntities.edmx</DependentUpon>
     </Content>
     <Content Include="OnBreakEntities.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>OnBreakEntities.edmx</DependentUpon>
       <LastGenOutput>OnBreakEntities.cs</LastGenOutput>
     </Content>
-    <Content Include="OnBreakEntitiesLocal.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>OnBreakEntitiesLocal.edmx</DependentUpon>
-      <LastGenOutput>OnBreakEntitiesLocal.Context.cs</LastGenOutput>
+    <Content Include="OnBreakLocal.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="OnBreakEntitiesLocal.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>OnBreakEntitiesLocal.edmx</DependentUpon>
-      <LastGenOutput>OnBreakEntitiesLocal.cs</LastGenOutput>
+    <Content Include="OnBreakLocal_log.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DependentUpon>OnBreakLocal.mdf</DependentUpon>
     </Content>
   </ItemGroup>
   <ItemGroup>
@@ -191,7 +145,20 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadata Include="Connected Services\" />
+    <EntityDeploy Include="OnBreakEntities.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>OnBreakEntities.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+    <None Include="OnBreakEntities.edmx.diagram">
+      <DependentUpon>OnBreakEntities.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

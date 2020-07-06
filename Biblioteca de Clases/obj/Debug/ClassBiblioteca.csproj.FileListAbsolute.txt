@@ -10,3 +10,5 @@ C:\Users\Yhodarks\source\repos\OnBreak\Biblioteca de Clases\bin\Debug\DALC.dll.c
 C:\Users\Yhodarks\source\repos\OnBreak\Biblioteca de Clases\bin\Debug\EntityFramework.xml
 C:\Users\Yhodarks\source\repos\OnBreak\Biblioteca de Clases\obj\Debug\ClassBiblioteca.csprojAssemblyReference.cache
 C:\Users\Yhodarks\source\repos\OnBreak\Biblioteca de Clases\obj\Debug\ClassBiblioteca.csproj.CopyComplete
+C:\Users\Yhodarks\source\repos\OnBreak\Biblioteca de Clases\bin\Debug\OnBreakLocal.mdf
+C:\Users\Yhodarks\source\repos\OnBreak\Biblioteca de Clases\bin\Debug\OnBreakLocal_log.ldf

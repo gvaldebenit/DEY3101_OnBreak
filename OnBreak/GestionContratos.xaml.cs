@@ -140,7 +140,7 @@ namespace OnBreak
                 dpFechaInicio.SelectedDate = c.InicioEvento;
                 dpFechaTermino.SelectedDate = c.TerminoEvento;
                 txtObservaciones.Text = c.Observaciones;
-                if(c.Vigente == true)
+                if(c.Realizado == true)
                 {
                     rbVigente.IsChecked = true;
                     rbVigente.Content = "Vigente";
@@ -314,7 +314,7 @@ namespace OnBreak
                 {
                     String numeroContrato = txtNumeroContrato.Text;
                     Contratos c = listaContratos.BuscarContrato(numeroContrato);
-                    if (c.Vigente == true)
+                    if (c.TerminoContrato == null)
                     {
                         if(listaContratos.TerminarContrato(numeroContrato) == true)
                         {

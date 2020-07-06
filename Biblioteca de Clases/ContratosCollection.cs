@@ -10,8 +10,8 @@ namespace ClassBiblioteca
     public class ContratosCollection
     {
         //Conexion A BD
-        private OnBreakEntitiesLocal _db = new OnBreakEntitiesLocal();
-        public OnBreakEntitiesLocal DB { get => _db; set => _db = value; }
+        private OnBreakEntities _db = new OnBreakEntities();
+        public OnBreakEntities DB { get => _db; set => _db = value; }
 
         //Metodos Customer
         //Método para leer todo
@@ -38,7 +38,7 @@ namespace ClassBiblioteca
                         PersonalAdicional = c.PersonalAdicional,
                         Total = c.ValorTotalContrato,
                         Observaciones = c.Observaciones,
-                        Vigente = c.Realizado,
+                        Realizado = c.Realizado,
                         CreacionContrato = c.Creacion,
                         TerminoContrato = c.Termino,
                         InicioEvento = c.FechaHoraInicio,
@@ -127,7 +127,7 @@ namespace ClassBiblioteca
                     PersonalAdicional = contrato.PersonalAdicional,
                     ValorTotalContrato = contrato.Total,
                     Observaciones = contrato.Observaciones,
-                    Realizado = contrato.Vigente,
+                    Realizado = contrato.Realizado,
                     Creacion = contrato.CreacionContrato,
                     Termino = contrato.TerminoContrato,
                     FechaHoraInicio = contrato.InicioEvento,
@@ -155,7 +155,15 @@ namespace ClassBiblioteca
                           select c;
                 if (aux.Count() > 0)
                 {
-                    aux.First().Realizado = false;
+                    //Para determinar si terminó o no
+                    if(aux.First().FechaHoraInicio < DateTime.Now)
+                    {
+                        aux.First().Realizado = false;
+                    }
+                    else
+                    {
+                        aux.First().Realizado = true;
+                    }
                     aux.First().Termino = DateTime.Now;
                     aux.First().Observaciones = "NO VIGENTE" + Environment.NewLine + "FECHA TERMINO: " +
                         DateTime.Today + Environment.NewLine + aux.First().Observaciones;
