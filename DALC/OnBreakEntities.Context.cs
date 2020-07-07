@@ -13,10 +13,10 @@ namespace DALC
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class OnBreakEntities : DbContext
+    public partial class DataBaseLocalEntities : DbContext
     {
-        public OnBreakEntities()
-            : base("name=OnBreakEntities")
+        public DataBaseLocalEntities()
+            : base("name=DataBaseLocalEntities")
         {
         }
     

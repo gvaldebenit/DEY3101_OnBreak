@@ -45,16 +45,8 @@ namespace OnBreak
         {
             InitializeComponent();
             instance = this;
-        }
-
-        //Constructor con Parametros
-        public GestionClientes(bool altoContraste)
-        {
-            InitializeComponent();
             cboActividadEmpresa.ItemsSource = listaClientes.ListarActividadEmpresas();
             cboTipoEmpresa.ItemsSource = listaClientes.ListarTipoEmpresas();
-            this.altoContraste.IsChecked = altoContraste;
-            altoContrasteIsActive();
         }
 
         //Funcion de Validacion de Rut
@@ -160,6 +152,7 @@ namespace OnBreak
                         {
                             await this.ShowMessageAsync("Exito", "Cliente Guardado con Exito");
                             Limpiar();
+                            AuxiliarClases.NotificationCenter.Notify("ListadoClientes");
                         }
                         else
                         {
@@ -209,6 +202,7 @@ namespace OnBreak
                         {
                             await this.ShowMessageAsync("Exito", "Cliente Eliminado Correctamente");
                             Limpiar();
+                            AuxiliarClases.NotificationCenter.Notify("ListadoClientes");
                         }
                         else
                         {
@@ -253,6 +247,7 @@ namespace OnBreak
                         {
                             await this.ShowMessageAsync("Exito", "Cliente Modificado con Exito", MessageDialogStyle.Affirmative);
                             Limpiar();
+                            AuxiliarClases.NotificationCenter.Notify("ListadoClientes");
                         }
                         else
                         {

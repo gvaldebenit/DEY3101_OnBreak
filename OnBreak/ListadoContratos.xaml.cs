@@ -41,20 +41,13 @@ namespace OnBreak
         {
             InitializeComponent();
             instance = this;
-        }
-
-        //Constructor Con Parametros
-        public ListadoContratos(bool altoContraste)
-        {
-            InitializeComponent();
             dgContratos.ItemsSource = listaContratos.ListaContrato();
             cbTipoEvento.ItemsSource = listaContratos.ListarTipoEvento();
             dgClientes.ItemsSource = listaClientes.ListaCliente();
             dgClientes.Items.Refresh();
             dgContratos.Items.Refresh();
             cbTipoEvento.Items.Refresh();
-            this.altoContraste.IsChecked = altoContraste;
-            altoContrasteIsActive();
+            AuxiliarClases.NotificationCenter.Subscribe("ListadoContratos", Limpiar);
         }
 
         //Buscar dinamicamente por Rut
@@ -96,12 +89,21 @@ namespace OnBreak
         //Limpiar Filtros
         private void btnRefrescar_Click(object sender, RoutedEventArgs e)
         {
-            dgContratos.ItemsSource = listaContratos.ListaContrato();
-            dgContratos.Items.Refresh();
-            //limpiar
-            txtRut.Text = String.Empty;
-            txtNContrato.Text = String.Empty;
-            cbTipoEvento.SelectedIndex = -1;
+            Limpiar();
+        }
+
+        //Limpiar
+        private void Limpiar()
+        {
+            Dispatcher.Invoke(() =>
+            {
+                dgContratos.ItemsSource = listaContratos.ListaContrato();
+                dgContratos.Items.Refresh();
+                //limpiar
+                txtRut.Text = String.Empty;
+                txtNContrato.Text = String.Empty;
+                cbTipoEvento.SelectedIndex = -1;
+            });
         }
 
         //Volver al Menu
@@ -171,7 +173,6 @@ namespace OnBreak
             }
 
         }
-
 
         private void MetroWindow_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {

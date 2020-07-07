@@ -10,8 +10,8 @@ namespace ClassBiblioteca
     public class ContratosCollection
     {
         //Conexion A BD
-        private OnBreakEntities _db = new OnBreakEntities();
-        public OnBreakEntities DB { get => _db; set => _db = value; }
+        private DataBaseLocalEntities _db = new DataBaseLocalEntities();
+        public DataBaseLocalEntities DB { get => _db; set => _db = value; }
 
         //Metodos Customer
         //Método para leer todo
@@ -138,12 +138,12 @@ namespace ClassBiblioteca
                 DB.Contrato.Add(cont);
                 DB.SaveChanges();
                 return true;
-            }
+        }
             catch (Exception)
             {
                 return false;
             }
-        }
+}
 
         //Terminar Vigencia
         public bool TerminarContrato(string numero)
@@ -155,25 +155,48 @@ namespace ClassBiblioteca
                           select c;
                 if (aux.Count() > 0)
                 {
-                    //Para determinar si terminó o no
-                    if(aux.First().FechaHoraInicio < DateTime.Now)
+                    if (aux.First().Termino == null)
                     {
-                        aux.First().Realizado = false;
+                        //Para determinar si terminó o no
+                        if (aux.First().FechaHoraInicio > DateTime.Now)
+                        {
+                            aux.First().Realizado = false;
+                        }
+                        else
+                        {
+                            aux.First().Realizado = true;
+                        }
+                        aux.First().Termino = DateTime.Now;
+                        aux.First().Observaciones = "NO VIGENTE" + Environment.NewLine + "FECHA TERMINO: " +
+                            DateTime.Today + Environment.NewLine + aux.First().Observaciones;
+                        DB.SaveChanges();
+                        return true;
                     }
                     else
                     {
-                        aux.First().Realizado = true;
+                        return false;
                     }
-                    aux.First().Termino = DateTime.Now;
-                    aux.First().Observaciones = "NO VIGENTE" + Environment.NewLine + "FECHA TERMINO: " +
-                        DateTime.Today + Environment.NewLine + aux.First().Observaciones;
-                    DB.SaveChanges();
-                    return true;
                 }
                 else
                 {
                     return false;
                 }
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+        //Metodo solo de Testeo
+        public bool borrarContrato(string numero)
+        {
+            try
+            {
+                Contrato con = DB.Contrato.Find(numero);
+                DB.Contrato.Remove(con);
+                DB.SaveChanges();
+                return true;
             }
             catch (Exception)
             {

@@ -12,6 +12,7 @@
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -24,7 +25,6 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -114,25 +114,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="OnBreakEntities.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>OnBreakEntities.Context.cs</LastGenOutput>
-      <DependentUpon>OnBreakEntities.edmx</DependentUpon>
-    </Content>
-    <Content Include="OnBreakEntities.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>OnBreakEntities.edmx</DependentUpon>
-      <LastGenOutput>OnBreakEntities.cs</LastGenOutput>
-    </Content>
-    <Content Include="OnBreakLocal.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="OnBreakLocal_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <DependentUpon>OnBreakLocal.mdf</DependentUpon>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
       <Visible>False</Visible>
       <ProductName>Microsoft .NET Framework 4.6.1 %28x86 y x64%29</ProductName>
@@ -145,13 +126,11 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <None Include="App.Config" />
     <EntityDeploy Include="OnBreakEntities.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>OnBreakEntities.Designer.cs</LastGenOutput>
     </EntityDeploy>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.Config" />
     <None Include="OnBreakEntities.edmx.diagram">
       <DependentUpon>OnBreakEntities.edmx</DependentUpon>
     </None>
@@ -159,6 +138,25 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DataBaseLocal.mdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DataBaseLocal_log.ldf">
+      <DependentUpon>DataBaseLocal.mdf</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="OnBreakEntities.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>OnBreakEntities.edmx</DependentUpon>
+      <LastGenOutput>OnBreakEntities.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="OnBreakEntities.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>OnBreakEntities.edmx</DependentUpon>
+      <LastGenOutput>OnBreakEntities.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

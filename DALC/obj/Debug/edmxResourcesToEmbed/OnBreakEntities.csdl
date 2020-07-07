@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="OnBreakModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+<Schema Namespace="DataBaseLocalModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
   <EntityType Name="ActividadEmpresa">
     <Key>
       <PropertyRef Name="IdActividadEmpresa" />
@@ -250,7 +250,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="OnBreakEntities" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="DataBaseLocalEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="ActividadEmpresa" EntityType="Self.ActividadEmpresa" />
     <EntitySet Name="Cenas" EntityType="Self.Cenas" />
     <EntitySet Name="Cliente" EntityType="Self.Cliente" />

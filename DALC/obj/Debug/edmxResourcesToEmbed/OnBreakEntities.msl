@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="OnBreakModelStoreContainer" CdmEntityContainer="OnBreakEntities">
+  <EntityContainerMapping StorageEntityContainer="DataBaseLocalModelStoreContainer" CdmEntityContainer="DataBaseLocalEntities">
     <EntitySetMapping Name="ActividadEmpresa">
-      <EntityTypeMapping TypeName="OnBreakModel.ActividadEmpresa">
+      <EntityTypeMapping TypeName="DataBaseLocalModel.ActividadEmpresa">
         <MappingFragment StoreEntitySet="ActividadEmpresa">
           <ScalarProperty Name="IdActividadEmpresa" ColumnName="IdActividadEmpresa" />
           <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
@@ -10,7 +10,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Cenas">
-      <EntityTypeMapping TypeName="OnBreakModel.Cenas">
+      <EntityTypeMapping TypeName="DataBaseLocalModel.Cenas">
         <MappingFragment StoreEntitySet="Cenas">
           <ScalarProperty Name="Numero" ColumnName="Numero" />
           <ScalarProperty Name="IdTipoAmbientacion" ColumnName="IdTipoAmbientacion" />
@@ -22,7 +22,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Cliente">
-      <EntityTypeMapping TypeName="OnBreakModel.Cliente">
+      <EntityTypeMapping TypeName="DataBaseLocalModel.Cliente">
         <MappingFragment StoreEntitySet="Cliente">
           <ScalarProperty Name="RutCliente" ColumnName="RutCliente" />
           <ScalarProperty Name="RazonSocial" ColumnName="RazonSocial" />
@@ -36,7 +36,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Cocktail">
-      <EntityTypeMapping TypeName="OnBreakModel.Cocktail">
+      <EntityTypeMapping TypeName="DataBaseLocalModel.Cocktail">
         <MappingFragment StoreEntitySet="Cocktail">
           <ScalarProperty Name="Numero" ColumnName="Numero" />
           <ScalarProperty Name="IdTipoAmbientacion" ColumnName="IdTipoAmbientacion" />
@@ -47,7 +47,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="CoffeeBreak">
-      <EntityTypeMapping TypeName="OnBreakModel.CoffeeBreak">
+      <EntityTypeMapping TypeName="DataBaseLocalModel.CoffeeBreak">
         <MappingFragment StoreEntitySet="CoffeeBreak">
           <ScalarProperty Name="Numero" ColumnName="Numero" />
           <ScalarProperty Name="Vegetariana" ColumnName="Vegetariana" />
@@ -55,7 +55,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Contrato">
-      <EntityTypeMapping TypeName="OnBreakModel.Contrato">
+      <EntityTypeMapping TypeName="DataBaseLocalModel.Contrato">
         <MappingFragment StoreEntitySet="Contrato">
           <ScalarProperty Name="Numero" ColumnName="Numero" />
           <ScalarProperty Name="Creacion" ColumnName="Creacion" />
@@ -76,7 +76,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="ModalidadServicio">
-      <EntityTypeMapping TypeName="OnBreakModel.ModalidadServicio">
+      <EntityTypeMapping TypeName="DataBaseLocalModel.ModalidadServicio">
         <MappingFragment StoreEntitySet="ModalidadServicio">
           <ScalarProperty Name="IdModalidad" ColumnName="IdModalidad" />
           <ScalarProperty Name="IdTipoEvento" ColumnName="IdTipoEvento" />
@@ -87,7 +87,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="TipoAmbientacion">
-      <EntityTypeMapping TypeName="OnBreakModel.TipoAmbientacion">
+      <EntityTypeMapping TypeName="DataBaseLocalModel.TipoAmbientacion">
         <MappingFragment StoreEntitySet="TipoAmbientacion">
           <ScalarProperty Name="IdTipoAmbientacion" ColumnName="IdTipoAmbientacion" />
           <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
@@ -95,7 +95,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="TipoEmpresa">
-      <EntityTypeMapping TypeName="OnBreakModel.TipoEmpresa">
+      <EntityTypeMapping TypeName="DataBaseLocalModel.TipoEmpresa">
         <MappingFragment StoreEntitySet="TipoEmpresa">
           <ScalarProperty Name="IdTipoEmpresa" ColumnName="IdTipoEmpresa" />
           <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
@@ -103,7 +103,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="TipoEvento">
-      <EntityTypeMapping TypeName="OnBreakModel.TipoEvento">
+      <EntityTypeMapping TypeName="DataBaseLocalModel.TipoEvento">
         <MappingFragment StoreEntitySet="TipoEvento">
           <ScalarProperty Name="IdTipoEvento" ColumnName="IdTipoEvento" />
           <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
@@ -111,7 +111,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Usuario">
-      <EntityTypeMapping TypeName="OnBreakModel.Usuario">
+      <EntityTypeMapping TypeName="DataBaseLocalModel.Usuario">
         <MappingFragment StoreEntitySet="Usuario">
           <ScalarProperty Name="id" ColumnName="id" />
           <ScalarProperty Name="usuario1" ColumnName="usuario" />

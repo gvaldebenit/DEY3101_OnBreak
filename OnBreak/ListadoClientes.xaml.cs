@@ -40,20 +40,13 @@ namespace OnBreak
         {
             InitializeComponent();
             instance = this;
-        }
-
-        //Constructor con Parametros
-        public ListadoClientes(bool altoContraste)
-        {
-            InitializeComponent();
             cboActividadEmpresa.ItemsSource = listaClientes.ListarActividadEmpresas();
             cboTipoEmpresa.ItemsSource = listaClientes.ListarTipoEmpresas();
             dgClientes.ItemsSource = listaClientes.ListaCliente();
             dgClientes.Items.Refresh();
             cboActividadEmpresa.Items.Refresh();
             cboTipoEmpresa.Items.Refresh();
-            this.altoContraste.IsChecked = altoContraste;
-            altoContrasteIsActive();
+            AuxiliarClases.NotificationCenter.Subscribe("ListadoClientes", Limpiar);
         }
 
         //Buscador dinamico de Rut
@@ -94,13 +87,21 @@ namespace OnBreak
         //Limpiar Filtros
         private void btnRefrescar_Click(object sender, RoutedEventArgs e)
         {
-            dgClientes.ItemsSource = listaClientes.ListaCliente();
-            dgClientes.Items.Refresh();
-            //limpiar
-            txtRut.Text = String.Empty;
-            cboTipoEmpresa.SelectedIndex = -1;
-            cboActividadEmpresa.SelectedIndex = -1;
+            Limpiar();
+        }
 
+        //Limpiar
+        public void Limpiar()
+        {
+            Dispatcher.Invoke(() =>
+            {
+                dgClientes.ItemsSource = listaClientes.ListaCliente();
+                dgClientes.Items.Refresh();
+                //limpiar
+                txtRut.Text = String.Empty;
+                cboTipoEmpresa.SelectedIndex = -1;
+                cboActividadEmpresa.SelectedIndex = -1;
+            });
         }
 
         //Salir

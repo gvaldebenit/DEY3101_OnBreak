@@ -12,8 +12,8 @@ namespace ClassBiblioteca
     public class ClientesCollection
     {
         //Conexion a BD
-        private OnBreakEntities _db = new OnBreakEntities();
-        public OnBreakEntities DB { get => _db; set => _db = value; }
+        private DataBaseLocalEntities _db = new DataBaseLocalEntities();
+        public DataBaseLocalEntities DB { get => _db; set => _db = value; }
 
         //Metodos Customer
         //Método para leer todo

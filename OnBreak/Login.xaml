@@ -8,16 +8,17 @@
         mc:Ignorable="d"
         BorderThickness="0" 
         GlowBrush="Black" 
-        Title="Login" Height="297" Width="622" Icon="Resources/Icons/white_logo_color_background.jpg" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Background="#FFC5DEEA" Closing="MetroWindow_Closing">
+        Title="Login" Height="297" Width="622" Icon="Resources/Icons/white_logo_color_background.jpg" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Background="#FFC5DEEA" Closing="MetroWindow_Closing" Closed="MetroWindow_Closed">
     <Grid>
         <Label x:Name="lbLogin" Content="INGRESO A SISTEMA DE GESTION ONBREAK" HorizontalAlignment="Left" Height="44" Margin="43,20,0,0" VerticalAlignment="Top" Width="519" FontSize="24" FontWeight="Bold" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
         <Label Content="Usuario" HorizontalAlignment="Left" Margin="49,115,0,0" VerticalAlignment="Top"/>
-        <Label Content="Contraseña" HorizontalAlignment="Left" Margin="49,166,0,0" VerticalAlignment="Top"/>
+        <Label Content="Contraseña" HorizontalAlignment="Left" Margin="49,154,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="txtUser" HorizontalAlignment="Left" Height="26" Margin="156,115,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="222" Controls:TextBoxHelper.WatermarkAlignment="Center" Controls:TextBoxHelper.Watermark="Usuario"/>
-        <PasswordBox x:Name="txtPass" HorizontalAlignment="Left" Height="26" Margin="156,166,0,0" VerticalAlignment="Top" Width="222" Controls:TextBoxHelper.Watermark="Contraseña"/>
+        <PasswordBox x:Name="txtPass" HorizontalAlignment="Left" Height="26" Margin="156,154,0,0" VerticalAlignment="Top" Width="222" Controls:TextBoxHelper.Watermark="Contraseña"/>
+        <CheckBox x:Name="chbRecordar" Content="Recordar Datos" HorizontalAlignment="Left" Margin="156,193,0,0" VerticalAlignment="Top"/>
         <Image Source="/Resources/Icons/iconfinder_window_screen_lock_icon_2541667.png" HorizontalAlignment="Left" Height="109" Margin="460,98,0,0" VerticalAlignment="Top" Width="107"/>
-        <Button x:Name="btnIngreso" Content="Ingresar" HorizontalAlignment="Left" Height="21" Margin="156,213,0,0" VerticalAlignment="Top" Width="70" Click="btnIngreso_Click" Background="{DynamicResource AccentColorBrush}"/>
-        <Button x:Name="btnSalir" Content="Salir" HorizontalAlignment="Left" Height="14" Margin="308,213,0,0" VerticalAlignment="Top" Width="70" Click="btnSalir_Click"/>
+        <Button x:Name="btnIngreso" Content="Ingresar" HorizontalAlignment="Left" Height="21" Margin="156,224,0,0" VerticalAlignment="Top" Width="70" Click="btnIngreso_Click" Background="{DynamicResource AccentColorBrush}"/>
+        <Button x:Name="btnSalir" Content="Salir" HorizontalAlignment="Left" Height="14" Margin="308,224,0,0" VerticalAlignment="Top" Width="70" Click="btnSalir_Click"/>
 
     </Grid>
 

@@ -1,5 +1,3 @@
-C:\Users\Yhodarks\source\repos\OnBreak\DALC\bin\Debug\OnBreakLocal.mdf
-C:\Users\Yhodarks\source\repos\OnBreak\DALC\bin\Debug\OnBreakLocal_log.ldf
 C:\Users\Yhodarks\source\repos\OnBreak\DALC\bin\Debug\DALC.dll.config
 C:\Users\Yhodarks\source\repos\OnBreak\DALC\bin\Debug\DALC.dll
 C:\Users\Yhodarks\source\repos\OnBreak\DALC\bin\Debug\DALC.pdb
@@ -10,3 +8,5 @@ C:\Users\Yhodarks\source\repos\OnBreak\DALC\obj\Debug\DALC.csproj.CoreCompileInp
 C:\Users\Yhodarks\source\repos\OnBreak\DALC\obj\Debug\DALC.csproj.CopyComplete
 C:\Users\Yhodarks\source\repos\OnBreak\DALC\obj\Debug\DALC.dll
 C:\Users\Yhodarks\source\repos\OnBreak\DALC\obj\Debug\DALC.pdb
+C:\Users\Yhodarks\source\repos\OnBreak\DALC\bin\Debug\DataBaseLocal.mdf
+C:\Users\Yhodarks\source\repos\OnBreak\DALC\bin\Debug\DataBaseLocal_log.ldf

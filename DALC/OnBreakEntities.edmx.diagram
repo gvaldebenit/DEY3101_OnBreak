@@ -4,28 +4,28 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="cb923e82db844d21808b54830613dd0c" Name="Diagram1">
-        <EntityTypeShape EntityType="OnBreakModel.ActividadEmpresa" Width="1.5" PointX="0.75" PointY="5.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="OnBreakModel.Cenas" Width="1.5" PointX="7.5" PointY="5.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="OnBreakModel.Cliente" Width="1.5" PointX="3" PointY="5.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="OnBreakModel.Cocktail" Width="1.5" PointX="10.5" PointY="5.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="OnBreakModel.CoffeeBreak" Width="1.5" PointX="7.5" PointY="12.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="OnBreakModel.Contrato" Width="1.5" PointX="5.25" PointY="4.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="OnBreakModel.ModalidadServicio" Width="1.5" PointX="3" PointY="9.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="OnBreakModel.TipoAmbientacion" Width="1.5" PointX="5.25" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="OnBreakModel.TipoEmpresa" Width="1.5" PointX="0.75" PointY="2.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="OnBreakModel.TipoEvento" Width="1.5" PointX="0.75" PointY="9.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="OnBreakModel.Usuario" Width="1.5" PointX="7.75" PointY="2.125" IsExpanded="true" />
-        <AssociationConnector Association="OnBreakModel.Cliente_ActividadEmpresa_FK1" ManuallyRouted="false" />
-        <AssociationConnector Association="OnBreakModel.Cena_TipoAmbientacion_FK1" ManuallyRouted="false" />
-        <AssociationConnector Association="OnBreakModel.Contrato_Cenas_FK1" ManuallyRouted="false" />
-        <AssociationConnector Association="OnBreakModel.Cliente_TipoEmpresa_FK1" ManuallyRouted="false" />
-        <AssociationConnector Association="OnBreakModel.Contrato_Cliente_FK1" ManuallyRouted="false" />
-        <AssociationConnector Association="OnBreakModel.Cocktail_TipoAmbientacion_FK1" ManuallyRouted="false" />
-        <AssociationConnector Association="OnBreakModel.Contrato_Cocktail_FK1" ManuallyRouted="false" />
-        <AssociationConnector Association="OnBreakModel.Contrato_CoffeeBreak_FK1" ManuallyRouted="false" />
-        <AssociationConnector Association="OnBreakModel.Contrato_ModalidadEvento_FK1" ManuallyRouted="false" />
-        <AssociationConnector Association="OnBreakModel.ModalidadServicio_TipoEvento_FK1" ManuallyRouted="false" />
+      <Diagram DiagramId="23e2ae2576fa4afebd03dfb0fd6f03eb" Name="Diagram1">
+        <EntityTypeShape EntityType="DataBaseLocalModel.ActividadEmpresa" Width="1.5" PointX="0.75" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DataBaseLocalModel.Cenas" Width="1.5" PointX="7.5" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DataBaseLocalModel.Cliente" Width="1.5" PointX="3" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DataBaseLocalModel.Cocktail" Width="1.5" PointX="10.5" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DataBaseLocalModel.CoffeeBreak" Width="1.5" PointX="7.5" PointY="12.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DataBaseLocalModel.Contrato" Width="1.5" PointX="5.25" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DataBaseLocalModel.ModalidadServicio" Width="1.5" PointX="3" PointY="9.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DataBaseLocalModel.TipoAmbientacion" Width="1.5" PointX="5.25" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DataBaseLocalModel.TipoEmpresa" Width="1.5" PointX="0.75" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DataBaseLocalModel.TipoEvento" Width="1.5" PointX="0.75" PointY="9.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DataBaseLocalModel.Usuario" Width="1.5" PointX="7.75" PointY="2.125" IsExpanded="true" />
+        <AssociationConnector Association="DataBaseLocalModel.Cliente_ActividadEmpresa_FK1" ManuallyRouted="false" />
+        <AssociationConnector Association="DataBaseLocalModel.Cena_TipoAmbientacion_FK1" ManuallyRouted="false" />
+        <AssociationConnector Association="DataBaseLocalModel.Contrato_Cenas_FK1" ManuallyRouted="false" />
+        <AssociationConnector Association="DataBaseLocalModel.Cliente_TipoEmpresa_FK1" ManuallyRouted="false" />
+        <AssociationConnector Association="DataBaseLocalModel.Contrato_Cliente_FK1" ManuallyRouted="false" />
+        <AssociationConnector Association="DataBaseLocalModel.Cocktail_TipoAmbientacion_FK1" ManuallyRouted="false" />
+        <AssociationConnector Association="DataBaseLocalModel.Contrato_Cocktail_FK1" ManuallyRouted="false" />
+        <AssociationConnector Association="DataBaseLocalModel.Contrato_CoffeeBreak_FK1" ManuallyRouted="false" />
+        <AssociationConnector Association="DataBaseLocalModel.Contrato_ModalidadEvento_FK1" ManuallyRouted="false" />
+        <AssociationConnector Association="DataBaseLocalModel.ModalidadServicio_TipoEvento_FK1" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

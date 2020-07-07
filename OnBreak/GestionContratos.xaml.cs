@@ -47,22 +47,23 @@ namespace OnBreak
         {
             InitializeComponent();
             instance = this;
+            cboTipoEvento.ItemsSource = listaContratos.ListarTipoEvento();
+            cboTipoEvento.Items.Refresh();
+            txtNumeroGuardar.Text = DateTime.Now.ToString("yyyyMMddHHmm");
+            AuxiliarClases.NotificationCenter.Subscribe("ListadoClientes", actualizarDG);
+            AuxiliarClases.NotificationCenter.Subscribe("ListadoContratos", actualizarDG);
         }
 
-        //Constructor con Parametros
-        public GestionContratos(bool altoContraste)
+        //Actualizar Datagrids
+        public void actualizarDG()
         {
-            InitializeComponent();
-            cboTipoEvento.ItemsSource = listaContratos.ListarTipoEvento();
-            dgClientes.ItemsSource = listaClientes.ListaCliente();
-            dgContrato.ItemsSource = listaContratos.ListaContrato();
-            dgContrato.Items.Refresh();
-            dgClientes.Items.Refresh();
-            cboTipoEvento.Items.Refresh();
-            this.altoContraste.IsChecked = altoContraste;
-            altoContrasteIsActive();
-            txtNumeroGuardar.Text = DateTime.Now.ToString("yyyyMMddHHmm");
-            
+            Dispatcher.Invoke(() =>
+            {
+                dgClientes.ItemsSource = listaClientes.ListaCliente();
+                dgContrato.ItemsSource = listaContratos.ListaContrato();
+                dgContrato.Items.Refresh();
+                dgClientes.Items.Refresh();
+            });
         }
 
         //Funcion de Validacion de Rut
@@ -171,6 +172,7 @@ namespace OnBreak
                 var mod = (from m in listaContratos.ListarModalidades() where m.TipoEvento.Id == (int)cboTipoEvento.SelectedValue select m).ToList();
                 cboModalidad.ItemsSource = mod;
                 cboModalidad.SelectedIndex = 0;
+                //Ver esto para los nuevos parametros
                 if ((int)cboTipoEvento.SelectedValue == 20)
                 {
                     rbTest.Visibility = Visibility.Visible;
@@ -179,7 +181,7 @@ namespace OnBreak
             
         }
 
-        //Poner valor base y personal base al cambiar modalidad
+        //Poner valor base y personal base al cambiar modalidad //Corregir con nuevos valores
         private void cboModalidad_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if(cboModalidad.SelectedIndex == -1)
@@ -281,6 +283,7 @@ namespace OnBreak
                     {
                         await this.ShowMessageAsync("Exito", "Contrato Agregado con Exito");
                         Limpiar();
+                        AuxiliarClases.NotificationCenter.Notify("ListadoContratos");
                     }
                     else
                     {
@@ -472,6 +475,20 @@ namespace OnBreak
         {
             instance = null;
         }
+
+        
+        //Boton Cache
+        private void btnCache_Click(object sender, RoutedEventArgs e)
+        {
+            guardarCache();
+        }
+
+        //guardar en cache
+        private void guardarCache()
+        {
+            //implementar luego del Calculo
+        }
+
 
         //Metodo para evitar string en donde debe haber solo numero, extraido de internet
         //private void txtCantPersonalAdicional_KeyDown(object sender, System.Windows.Input.KeyEventArgs e)

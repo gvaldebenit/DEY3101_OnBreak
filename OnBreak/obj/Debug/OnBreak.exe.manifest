@@ -42,14 +42,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ClassBiblioteca.dll" size="35328">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ClassBiblioteca.dll" size="35840">
       <assemblyIdentity name="ClassBiblioteca" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>4hmD4w9/Zqy3CTByjs818n99VtNYr/OiBUkFOnesbdg=</dsig:DigestValue>
+        <dsig:DigestValue>Z80Pk9EiIRx+fAXOiUV1RHaSG95JN1tNssfhf2k2uwo=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -73,7 +73,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>ltdqm3viqmsQMrNLQB6aKbfFpWPS14pVxmqwODPjI+Y=</dsig:DigestValue>
+        <dsig:DigestValue>pxvxJBxp++WKfMWIFIDoNufBcpi7WHqTQjTG+sGyqec=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -114,14 +114,278 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="OnBreak.exe" size="4966904">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="MahApps.Metro.IconPacks.dll" size="31744">
+      <assemblyIdentity name="MahApps.Metro.IconPacks" version="4.0.0.0" publicKeyToken="0C0D510F9915137A" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>/cc/JxGKu01rXLdg8cW/QCgRt0S1C/s2LdhQLN3+jSk=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="MahApps.Metro.IconPacks.BoxIcons.dll" size="1838592">
+      <assemblyIdentity name="MahApps.Metro.IconPacks.BoxIcons" version="4.0.0.0" publicKeyToken="0C0D510F9915137A" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>LcznzP9B1pDCAyDew8yFH71RzfiTHrj7rMDhUio/OcI=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="MahApps.Metro.IconPacks.Core.dll" size="18944">
+      <assemblyIdentity name="MahApps.Metro.IconPacks.Core" version="4.0.0.0" publicKeyToken="0C0D510F9915137A" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>HZFN2Nlk3uKzZHkL+EolYQItvu7pumrHkw7uJ1wpDIs=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="MahApps.Metro.IconPacks.Entypo.dll" size="501248">
+      <assemblyIdentity name="MahApps.Metro.IconPacks.Entypo" version="4.0.0.0" publicKeyToken="0C0D510F9915137A" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>GnfSq42HQU/fWvNUqSFri1ZFh0P7MwmewI93MXK3I5U=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="MahApps.Metro.IconPacks.EvaIcons.dll" size="425984">
+      <assemblyIdentity name="MahApps.Metro.IconPacks.EvaIcons" version="4.0.0.0" publicKeyToken="0C0D510F9915137A" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>WnY4aJLTDtnMZcda/rF9mOb0hawGhnjNtuVROqy9JMA=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="MahApps.Metro.IconPacks.FeatherIcons.dll" size="108544">
+      <assemblyIdentity name="MahApps.Metro.IconPacks.FeatherIcons" version="4.0.0.0" publicKeyToken="0C0D510F9915137A" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>VRP5BWJ/9foRdPpBAH3X1sP6nX6JfAQGz4uatkwAa+g=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="MahApps.Metro.IconPacks.FontAwesome.dll" size="2335232">
+      <assemblyIdentity name="MahApps.Metro.IconPacks.FontAwesome" version="4.0.0.0" publicKeyToken="0C0D510F9915137A" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>t6AEp6tLxNJpiznff6GwgLwAAdGFskygllrhHUG4Tx4=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="MahApps.Metro.IconPacks.Ionicons.dll" size="828416">
+      <assemblyIdentity name="MahApps.Metro.IconPacks.Ionicons" version="4.0.0.0" publicKeyToken="0C0D510F9915137A" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>KauvpxhipByutozHeCv7u+6B790T+kD7uGh7u7hcLzs=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="MahApps.Metro.IconPacks.JamIcons.dll" size="1681920">
+      <assemblyIdentity name="MahApps.Metro.IconPacks.JamIcons" version="4.0.0.0" publicKeyToken="0C0D510F9915137A" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>QKSkhFF4LE8KYCXfkeIGQ7TEW70Bzm7GdBqGKZdYNPM=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="MahApps.Metro.IconPacks.Material.dll" size="3918848">
+      <assemblyIdentity name="MahApps.Metro.IconPacks.Material" version="4.0.0.0" publicKeyToken="0C0D510F9915137A" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>bQclsqX9oiJUo2dOcc/EMMjETvn0GvPsv7HXB7uoyk4=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="MahApps.Metro.IconPacks.MaterialDesign.dll" size="480256">
+      <assemblyIdentity name="MahApps.Metro.IconPacks.MaterialDesign" version="4.0.0.0" publicKeyToken="0C0D510F9915137A" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>JwGemFTQC/vDYuJJfLq2mMSgz29AMVWhORYPLYgMTUI=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="MahApps.Metro.IconPacks.MaterialLight.dll" size="275456">
+      <assemblyIdentity name="MahApps.Metro.IconPacks.MaterialLight" version="4.0.0.0" publicKeyToken="0C0D510F9915137A" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>oFPLpJVPGY7jbxUSmvObw3Wz/tdPYTWE2O6z3q1nKkA=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="MahApps.Metro.IconPacks.Microns.dll" size="70656">
+      <assemblyIdentity name="MahApps.Metro.IconPacks.Microns" version="4.0.0.0" publicKeyToken="0C0D510F9915137A" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>bLjqvy/yNIW2E2Fd5Y7ui/YXrT0NwzgDLAxjEV6o+VI=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="MahApps.Metro.IconPacks.Modern.dll" size="2378240">
+      <assemblyIdentity name="MahApps.Metro.IconPacks.Modern" version="4.0.0.0" publicKeyToken="0C0D510F9915137A" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>ISDcEpZ2GfIWQMFu5jdUvOCRwZIrDBPkhL8pwpWncV4=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="MahApps.Metro.IconPacks.Octicons.dll" size="140800">
+      <assemblyIdentity name="MahApps.Metro.IconPacks.Octicons" version="4.0.0.0" publicKeyToken="0C0D510F9915137A" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>PaNUdia72FZLnSaun4q4buny1ZP8UFcPGe0wjsCmLs8=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="MahApps.Metro.IconPacks.PicolIcons.dll" size="757760">
+      <assemblyIdentity name="MahApps.Metro.IconPacks.PicolIcons" version="4.0.0.0" publicKeyToken="0C0D510F9915137A" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>TwVVv92PwtDozihkJhN59XHFyOK6NUC0hv+XKX0Xi6o=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="MahApps.Metro.IconPacks.RPGAwesome.dll" size="1266688">
+      <assemblyIdentity name="MahApps.Metro.IconPacks.RPGAwesome" version="4.0.0.0" publicKeyToken="0C0D510F9915137A" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>oZsD510i1Lkg7+zOdfdOXQc797tHWzJqykhlt4HZnDI=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="MahApps.Metro.IconPacks.SimpleIcons.dll" size="4276224">
+      <assemblyIdentity name="MahApps.Metro.IconPacks.SimpleIcons" version="4.0.0.0" publicKeyToken="0C0D510F9915137A" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>hz2OZJM3Bktxpa5he0newel5Ha8b9T1BCGD1f7gLe24=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="MahApps.Metro.IconPacks.Typicons.dll" size="359936">
+      <assemblyIdentity name="MahApps.Metro.IconPacks.Typicons" version="4.0.0.0" publicKeyToken="0C0D510F9915137A" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>xg+mUYa6xjP+gMSEo66r4X3q0rC4XwoQECIHqFhmysw=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="MahApps.Metro.IconPacks.Unicons.dll" size="1217536">
+      <assemblyIdentity name="MahApps.Metro.IconPacks.Unicons" version="4.0.0.0" publicKeyToken="0C0D510F9915137A" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>I77Uq7J+YXZMNmbmHC8W0MUOvgZTPc1Kg5u2kHjKcxM=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="MahApps.Metro.IconPacks.WeatherIcons.dll" size="729600">
+      <assemblyIdentity name="MahApps.Metro.IconPacks.WeatherIcons" version="4.0.0.0" publicKeyToken="0C0D510F9915137A" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>ajl4UGfCjVq80+HToiYMcf0fT+6/LFfOdWu/REIDXVE=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="MahApps.Metro.IconPacks.Zondicons.dll" size="109568">
+      <assemblyIdentity name="MahApps.Metro.IconPacks.Zondicons" version="4.0.0.0" publicKeyToken="0C0D510F9915137A" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>fiuTnYMM3JmXk9J2QesF9Eml1vIlSd53XEB5Rat0et8=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="OnBreak.exe" size="4976632">
       <assemblyIdentity name="OnBreak" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>FLj4uFbk6tsTTC9R1ycdn7uVDvJuP+zAu/daZLM+WsE=</dsig:DigestValue>
+        <dsig:DigestValue>VN917GE++hF5+h3jezeqZiGPk6wTE1m4NsoG2RuBzko=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -149,13 +413,13 @@
       </hash>
     </dependentAssembly>
   </dependency>
-  <file name="OnBreak.exe.config" size="674">
+  <file name="OnBreak.exe.config" size="1657">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>OkgZ1LNVWkmgPQXidclBFVICDXNCPva/BYHq8ZgWwto=</dsig:DigestValue>
+      <dsig:DigestValue>Lk4+SuH+dPSkiu56iZrwOsMfkNHNsgEzegOPyP8rrQY=</dsig:DigestValue>
     </hash>
   </file>
 </asmv1:assembly>

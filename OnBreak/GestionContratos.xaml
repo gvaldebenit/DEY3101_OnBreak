@@ -4,6 +4,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
         xmlns:local="clr-namespace:OnBreak"
         mc:Ignorable="d"
         BorderThickness="0" 
@@ -164,6 +165,17 @@
         
     </Grid>
 
+    <!-- Guardar Cache -->
+    <Controls:MetroWindow.LeftWindowCommands>
+        <Controls:WindowCommands>
+            <Button x:Name="btnCache" ToolTip="Guardar Respaldo" Click="btnCache_Click">
+                <iconPacks:PackIconModern Width="22"
+                                  Height="22"
+                                  Kind="Save" />
+            </Button>
+        </Controls:WindowCommands>
+    </Controls:MetroWindow.LeftWindowCommands>
+    
     <!-- Switch Alto Contraste -->
     <Controls:MetroWindow.RightWindowCommands>
         <Controls:WindowCommands>

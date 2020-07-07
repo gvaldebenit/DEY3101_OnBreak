@@ -22,5 +22,53 @@ namespace OnBreak.Properties {
                 return defaultInstance;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string User {
+            get {
+                return ((string)(this["User"]));
+            }
+            set {
+                this["User"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string Pass {
+            get {
+                return ((string)(this["Pass"]));
+            }
+            set {
+                this["Pass"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool RembLogin {
+            get {
+                return ((bool)(this["RembLogin"]));
+            }
+            set {
+                this["RembLogin"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool AltoContraste {
+            get {
+                return ((bool)(this["AltoContraste"]));
+            }
+            set {
+                this["AltoContraste"] = value;
+            }
+        }
     }
 }

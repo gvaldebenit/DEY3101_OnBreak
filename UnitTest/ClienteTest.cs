@@ -112,7 +112,7 @@ namespace UnitTest
 
         //Eliminar Cliente
         [TestMethod]
-        public void EliminarCliente()
+        public void NEliminarCliente()
         {
             String rut = "19383285-7";
 
@@ -122,7 +122,7 @@ namespace UnitTest
 
         //Eliminar Cliente erroneo
         [TestMethod]
-        public void EliminarClienteErroneo()
+        public void NEliminarClienteErroneo()
         {
             string rut = "19383285-734345";
 

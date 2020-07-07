@@ -23,5 +23,5 @@ C:\Users\Yhodarks\source\repos\OnBreak\UnitTest\bin\Debug\ClassBiblioteca.pdb
 C:\Users\Yhodarks\source\repos\OnBreak\UnitTest\bin\Debug\DALC.pdb
 C:\Users\Yhodarks\source\repos\OnBreak\UnitTest\bin\Debug\DALC.dll.config
 C:\Users\Yhodarks\source\repos\OnBreak\UnitTest\bin\Debug\EntityFramework.xml
-C:\Users\Yhodarks\source\repos\OnBreak\UnitTest\bin\Debug\OnBreakLocal.mdf
-C:\Users\Yhodarks\source\repos\OnBreak\UnitTest\bin\Debug\OnBreakLocal_log.ldf
+C:\Users\Yhodarks\source\repos\OnBreak\UnitTest\bin\Debug\DataBaseLocal.mdf
+C:\Users\Yhodarks\source\repos\OnBreak\UnitTest\bin\Debug\DataBaseLocal_log.ldf

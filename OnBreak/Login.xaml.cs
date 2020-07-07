@@ -47,6 +47,9 @@ namespace OnBreak
             UsuariosCollection collection = new UsuariosCollection();
             this.Usuarios = collection.ListaUsuario();
             instance = this;
+            recordar();
+            this.altoContraste.IsChecked = Properties.Settings.Default.AltoContraste;
+            altoContrasteIsActive();
         }
 
         //Validar No campos Vacios
@@ -95,10 +98,14 @@ namespace OnBreak
         {
             if (this.altoContraste.IsChecked == true)
             {
+                this.Background = new SolidColorBrush(Color.FromRgb(0xFF, 0x2D, 0x00));
+                ThemeManager.ChangeAppStyle(this, ThemeManager.GetAccent("RED"), ThemeManager.GetAppTheme("BaseDark"));
                 return true;
             }
             else
             {
+                this.Background = new SolidColorBrush(Color.FromRgb(0xC5, 0xDE, 0xEA));
+                ThemeManager.ChangeAppStyle(this, ThemeManager.GetAccent("Blue"), ThemeManager.GetAppTheme("BaseLight"));
                 return false;
             }
         }
@@ -120,6 +127,39 @@ namespace OnBreak
         private void MetroWindow_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             instance = null;
+        }
+
+
+        //Guardar Cache
+        private void MetroWindow_Closed(object sender, EventArgs e)
+        {
+            if(chbRecordar.IsChecked == true)
+            {
+                Properties.Settings.Default.User = txtUser.Text;
+                Properties.Settings.Default.Pass = txtPass.Password;
+                Properties.Settings.Default.RembLogin = true;
+                Properties.Settings.Default.AltoContraste = (bool)altoContraste.IsChecked;
+                Properties.Settings.Default.Save();
+            }
+            else
+            {
+                Properties.Settings.Default.User = "";
+                Properties.Settings.Default.Pass = "";
+                Properties.Settings.Default.RembLogin = false;
+                Properties.Settings.Default.AltoContraste = (bool)altoContraste.IsChecked;
+                Properties.Settings.Default.Save();
+            }
+        }
+
+        //Revisar Cache
+        private void recordar()
+        {
+            if(Properties.Settings.Default.RembLogin == true)
+            {
+                txtUser.Text = Properties.Settings.Default.User.ToString();
+                txtPass.Password = Properties.Settings.Default.Pass.ToString();
+                chbRecordar.IsChecked = (bool)Properties.Settings.Default.RembLogin;
+            }
         }
     }
 }
