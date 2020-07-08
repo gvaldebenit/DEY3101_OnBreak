@@ -48,6 +48,9 @@ namespace OnBreak
             dgContratos.Items.Refresh();
             cbTipoEvento.Items.Refresh();
             AuxiliarClases.NotificationCenter.Subscribe("ListadoContratos", Limpiar);
+            AuxiliarClases.NotificationCenter.Subscribe("ListadoClientes", Limpiar);
+            this.altoContraste.IsChecked = Properties.Settings.Default.AltoContraste;
+            altoContrasteIsActive();
         }
 
         //Buscar dinamicamente por Rut
@@ -177,6 +180,12 @@ namespace OnBreak
         private void MetroWindow_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             instance = null;
+        }
+
+        private void MetroWindow_Closed(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.AltoContraste = (bool)altoContraste.IsChecked;
+            Properties.Settings.Default.Save();
         }
     }
 }

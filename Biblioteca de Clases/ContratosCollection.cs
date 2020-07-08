@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices.WindowsRuntime;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -188,6 +189,114 @@ namespace ClassBiblioteca
             }
         }
 
+        //Traer Datos Doble Busqueda 
+        public Object BuscarDatosExtra(string nroContrato)
+        {
+            var clist = from con in DB.Contrato
+                        where con.Numero == nroContrato
+                        select con;
+            Contrato c = clist.First();
+            if(c.IdTipoEvento == 10)
+            {
+                var aux = c.CoffeeBreak;
+                CoffeBreaks r = new CoffeBreaks(aux.Numero, aux.Vegetariana);
+                return r;
+            }
+            else if (c.IdTipoEvento == 20)
+            {
+                var aux = c.Cocktail;
+                var aux2 = aux.TipoAmbientacion;
+                Cocktails r = new Cocktails()
+                {
+                    Numero = aux.Numero,
+                    Ambientacion = new Ambientacion(aux2.IdTipoAmbientacion, aux2.Descripcion),
+                    PoseeAmbientacion = aux.Ambientacion,
+                    MusicaAmbiental = aux.MusicaAmbiental,
+                    MusicaCliente = aux.MusicaCliente
+                };
+                return r;                                            
+            }
+            else if (c.IdTipoEvento == 30)
+            {
+                var aux = c.Cenas;
+                var aux2 = aux.TipoAmbientacion;
+                Cena r = new Cena()
+                {
+                    Numero = aux.Numero,
+                    Ambientacion = new Ambientacion(aux2.IdTipoAmbientacion, aux2.Descripcion),
+                    MusicaAmbiental = aux.MusicaAmbiental,
+                    LocalOnBreak = aux.LocalOnBreak,
+                    OtroLocal = aux.OtroLocalOnBreak,
+                    ValorArriendo = aux.ValorArriendo
+                };
+                return r;
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        //Agregar Datos Extra
+        public bool AgregarExtra(object extra)
+        {
+            try
+            {
+                if(extra is CoffeBreaks)
+                {
+                    CoffeBreaks aux = (CoffeBreaks)extra;
+                    CoffeeBreak c = new CoffeeBreak()
+                    {
+                        Numero = aux.Numero,
+                        Vegetariana = aux.Vegetariano
+                    };
+                    DB.CoffeeBreak.Add(c);
+                    DB.SaveChanges();
+                    return true;
+                }
+                else if (extra is Cocktails)
+                {
+                    Cocktails aux = (Cocktails)extra;
+                    Cocktail c = new Cocktail()
+                    {
+                        Numero = aux.Numero,
+                        IdTipoAmbientacion = aux.Ambientacion.IdAmbientacion,
+                        Ambientacion = aux.PoseeAmbientacion,
+                        MusicaAmbiental = aux.MusicaAmbiental,
+                        MusicaCliente = aux.MusicaCliente
+                    };
+                    DB.Cocktail.Add(c);
+                    DB.SaveChanges();
+                    return true;
+                }
+                else if (extra is Cena)
+                {
+                    Cena aux = (Cena)extra;
+                    Cenas c = new Cenas()
+                    {
+                        Numero = aux.Numero,
+                        IdTipoAmbientacion = aux.Ambientacion.IdAmbientacion,
+                        MusicaAmbiental = aux.MusicaAmbiental,
+                        LocalOnBreak = aux.LocalOnBreak,
+                        OtroLocalOnBreak = aux.OtroLocal,
+                        ValorArriendo = aux.ValorArriendo
+                    };
+                    DB.Cenas.Add(c);
+                    DB.SaveChanges();
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+
+        }
+
         //Metodo solo de Testeo
         public bool borrarContrato(string numero)
         {
@@ -226,6 +335,15 @@ namespace ClassBiblioteca
             return (from t in DB.TipoEvento
                     select new TipoEventos()
                     { Id = t.IdTipoEvento, Descripcion = t.Descripcion}
+                    ).ToList();
+        }
+
+        //Listar Ambientaciones 
+        public List<Ambientacion> ListarTipoAmbientacion()
+        {
+            return (from t in DB.TipoAmbientacion
+                    select new Ambientacion()
+                    { IdAmbientacion = t.IdTipoAmbientacion, Descripcion = t.Descripcion }
                     ).ToList();
         }
     }

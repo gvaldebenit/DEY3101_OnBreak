@@ -40,13 +40,8 @@ namespace OnBreak
         {
             InitializeComponent();
             instance = this;
-        }
-
-        public Menu(bool altoContraste)
-        {
-            InitializeComponent();
-            this.altoContraste.IsChecked = altoContraste;
-            altoContrasteIsActive();
+            Properties.Settings.Default.AltoContraste = (bool)altoContraste.IsChecked;
+            Properties.Settings.Default.Save();
         }
 
         //Ventana Gestion Clientes
@@ -125,6 +120,12 @@ namespace OnBreak
         private void MetroWindow_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             instance = null;
+        }
+
+        private void MetroWindow_Closed(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.AltoContraste = (bool)altoContraste.IsChecked;
+            Properties.Settings.Default.Save();
         }
     }
 }

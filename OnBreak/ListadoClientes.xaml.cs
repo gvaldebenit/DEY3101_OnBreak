@@ -47,6 +47,8 @@ namespace OnBreak
             cboActividadEmpresa.Items.Refresh();
             cboTipoEmpresa.Items.Refresh();
             AuxiliarClases.NotificationCenter.Subscribe("ListadoClientes", Limpiar);
+            this.altoContraste.IsChecked = Properties.Settings.Default.AltoContraste;
+            altoContrasteIsActive();
         }
 
         //Buscador dinamico de Rut
@@ -148,6 +150,12 @@ namespace OnBreak
         private void MetroWindow_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             instance = null;
+        }
+
+        private void MetroWindow_Closed(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.AltoContraste = (bool)altoContraste.IsChecked;
+            Properties.Settings.Default.Save();
         }
     }
 }

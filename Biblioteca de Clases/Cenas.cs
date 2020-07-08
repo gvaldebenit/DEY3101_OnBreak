@@ -14,7 +14,7 @@ namespace ClassBiblioteca
         private bool _musicaAmbiental;
         private bool _localOnBreak;
         private bool _otroLocal;
-        private float _valorArriendo;
+        private double _valorArriendo;
 
         //Metodos Atributos
         public string Numero { get => _numero; set => _numero = value; }
@@ -22,7 +22,7 @@ namespace ClassBiblioteca
         public bool MusicaAmbiental { get => _musicaAmbiental; set => _musicaAmbiental = value; }
         public bool LocalOnBreak { get => _localOnBreak; set => _localOnBreak = value; }
         public bool OtroLocal { get => _otroLocal; set => _otroLocal = value; }
-        public float ValorArriendo { get => _valorArriendo; set => _valorArriendo = value; }
+        public double ValorArriendo { get => _valorArriendo; set => _valorArriendo = value; }
 
         //Constructores
         public Cena()

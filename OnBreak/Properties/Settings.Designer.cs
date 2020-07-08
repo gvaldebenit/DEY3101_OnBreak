@@ -70,5 +70,267 @@ namespace OnBreak.Properties {
                 this["AltoContraste"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string RutContrato {
+            get {
+                return ((string)(this["RutContrato"]));
+            }
+            set {
+                this["RutContrato"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string NumeroContrato {
+            get {
+                return ((string)(this["NumeroContrato"]));
+            }
+            set {
+                this["NumeroContrato"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string NombreEvento {
+            get {
+                return ((string)(this["NombreEvento"]));
+            }
+            set {
+                this["NombreEvento"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string Direccion {
+            get {
+                return ((string)(this["Direccion"]));
+            }
+            set {
+                this["Direccion"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int IndexTipoEvento {
+            get {
+                return ((int)(this["IndexTipoEvento"]));
+            }
+            set {
+                this["IndexTipoEvento"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int IndexModalidad {
+            get {
+                return ((int)(this["IndexModalidad"]));
+            }
+            set {
+                this["IndexModalidad"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double Asistentes {
+            get {
+                return ((double)(this["Asistentes"]));
+            }
+            set {
+                this["Asistentes"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double PAdicional {
+            get {
+                return ((double)(this["PAdicional"]));
+            }
+            set {
+                this["PAdicional"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double Valor {
+            get {
+                return ((double)(this["Valor"]));
+            }
+            set {
+                this["Valor"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::System.DateTime FInicio {
+            get {
+                return ((global::System.DateTime)(this["FInicio"]));
+            }
+            set {
+                this["FInicio"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::System.DateTime FTermino {
+            get {
+                return ((global::System.DateTime)(this["FTermino"]));
+            }
+            set {
+                this["FTermino"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string Observaciones {
+            get {
+                return ((string)(this["Observaciones"]));
+            }
+            set {
+                this["Observaciones"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool Vegetariano {
+            get {
+                return ((bool)(this["Vegetariano"]));
+            }
+            set {
+                this["Vegetariano"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool Ambientacion {
+            get {
+                return ((bool)(this["Ambientacion"]));
+            }
+            set {
+                this["Ambientacion"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int IndexAmbientacion {
+            get {
+                return ((int)(this["IndexAmbientacion"]));
+            }
+            set {
+                this["IndexAmbientacion"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool Musica {
+            get {
+                return ((bool)(this["Musica"]));
+            }
+            set {
+                this["Musica"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool MusicaCliente {
+            get {
+                return ((bool)(this["MusicaCliente"]));
+            }
+            set {
+                this["MusicaCliente"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double ValorArriendo {
+            get {
+                return ((double)(this["ValorArriendo"]));
+            }
+            set {
+                this["ValorArriendo"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool LocalOnBreak {
+            get {
+                return ((bool)(this["LocalOnBreak"]));
+            }
+            set {
+                this["LocalOnBreak"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool LocalOtro {
+            get {
+                return ((bool)(this["LocalOtro"]));
+            }
+            set {
+                this["LocalOtro"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool respaldo {
+            get {
+                return ((bool)(this["respaldo"]));
+            }
+            set {
+                this["respaldo"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string NombreCliente {
+            get {
+                return ((string)(this["NombreCliente"]));
+            }
+            set {
+                this["NombreCliente"] = value;
+            }
+        }
     }
 }

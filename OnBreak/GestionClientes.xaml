@@ -9,7 +9,7 @@
         mc:Ignorable="d"
         BorderThickness="0" 
         GlowBrush="Black"               
-        Title="Gestion de Clientes" Height="389.125" Width="575" Background="#FFC5DEEA" ResizeMode="NoResize" Icon="Resources/Icons/white_logo_color_background.jpg" WindowStartupLocation="CenterScreen" Closing="MetroWindow_Closing">
+        Title="Gestion de Clientes" Height="389.125" Width="575" Background="#FFC5DEEA" ResizeMode="NoResize" Icon="Resources/Icons/white_logo_color_background.jpg" WindowStartupLocation="CenterScreen" Closing="MetroWindow_Closing" Closed="MetroWindow_Closed">
     
     <Grid Margin="0,0,2,1" >
         <Grid.RowDefinitions>

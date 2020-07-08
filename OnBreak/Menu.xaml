@@ -8,7 +8,7 @@
         mc:Ignorable="d"
         BorderThickness="0" 
         GlowBrush="Black"              
-        Title="Menu" Height="372" Width="500" Foreground="White" Icon="Resources/Icons/white_logo_color_background.jpg" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Background="#FFC5DEEA" Closing="MetroWindow_Closing">
+        Title="Menu" Height="372" Width="500" Foreground="White" Icon="Resources/Icons/white_logo_color_background.jpg" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Background="#FFC5DEEA" Closing="MetroWindow_Closing" Closed="MetroWindow_Closed">
 
     <!-- Switch -->
     <Controls:MetroWindow.RightWindowCommands>

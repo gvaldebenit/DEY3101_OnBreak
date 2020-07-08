@@ -49,9 +49,15 @@ namespace OnBreak
             instance = this;
             cboTipoEvento.ItemsSource = listaContratos.ListarTipoEvento();
             cboTipoEvento.Items.Refresh();
+            cboAmbientacion.ItemsSource = listaContratos.ListarTipoAmbientacion();
+            cboAmbientacion.Items.Refresh();
             txtNumeroGuardar.Text = DateTime.Now.ToString("yyyyMMddHHmm");
             AuxiliarClases.NotificationCenter.Subscribe("ListadoClientes", actualizarDG);
             AuxiliarClases.NotificationCenter.Subscribe("ListadoContratos", actualizarDG);
+            organizarExtras(0);
+            recuperar();
+            Properties.Settings.Default.AltoContraste = (bool)altoContraste.IsChecked;
+            Properties.Settings.Default.Save();
         }
 
         //Actualizar Datagrids
@@ -141,20 +147,50 @@ namespace OnBreak
                 dpFechaInicio.SelectedDate = c.InicioEvento;
                 dpFechaTermino.SelectedDate = c.TerminoEvento;
                 txtObservaciones.Text = c.Observaciones;
-                if(c.Realizado == true)
+                if(c.Realizado == true && c.TerminoContrato != null)
                 {
                     rbVigente.IsChecked = true;
-                    rbVigente.Content = "Vigente";
+                    rbVigente.Content = "Realizado";
                     rbVigente.Foreground = Brushes.Red;
                     rbVigente.Visibility = Visibility.Visible;
                 }
-                else
+                else if((c.Realizado == false && c.TerminoContrato != null))
                 {
                     rbVigente.IsChecked = true;
-                    rbVigente.Content = "No Vigente";
+                    rbVigente.Content = "No Realizado";
                     rbVigente.Foreground = Brushes.Red;
                     rbVigente.Visibility = Visibility.Visible;
+                };
+                if (c.ModalidadServicio.TipoEvento.Id == 10)
+                {
+                    CoffeBreaks cb = (CoffeBreaks)listaContratos.BuscarDatosExtra(c.NumeroContrato);
+                    chkVegetariano.IsChecked = (bool)cb.Vegetariano;
                 }
+                else if (c.ModalidadServicio.TipoEvento.Id == 20)
+                {
+                    Cocktails cb = (Cocktails)listaContratos.BuscarDatosExtra(c.NumeroContrato);
+                    chkAmbientacion.IsChecked = (bool)cb.PoseeAmbientacion;
+                    chkMusica.IsChecked = (bool)cb.MusicaAmbiental;
+                    chkMusiCli.IsChecked = (bool)cb.MusicaCliente;
+                    if (chkAmbientacion.IsChecked == false)
+                    {
+                        cboAmbientacion.SelectedIndex = -1;
+                    }
+                    else
+                    {
+                        cboAmbientacion.SelectedValue = cb.Ambientacion.IdAmbientacion;
+                    }
+                }
+                else if (c.ModalidadServicio.TipoEvento.Id == 30)
+                {
+                    Cena cb = (Cena)listaContratos.BuscarDatosExtra(c.NumeroContrato);
+                    chkAmbientacion.IsChecked = true;
+                    cboAmbientacion.SelectedValue = cb.Ambientacion.IdAmbientacion;
+                    chkMusica.IsChecked = (bool)cb.MusicaAmbiental;
+                    rbnLocalOnBreak.IsChecked = (bool)cb.LocalOnBreak;
+                    rbnLocalOtro.IsChecked = (bool)cb.OtroLocal;
+                    txtValorArriendo.Text = cb.ValorArriendo.ToString("n2");
+                };
             }
             catch (Exception)
             {
@@ -173,15 +209,11 @@ namespace OnBreak
                 cboModalidad.ItemsSource = mod;
                 cboModalidad.SelectedIndex = 0;
                 //Ver esto para los nuevos parametros
-                if ((int)cboTipoEvento.SelectedValue == 20)
-                {
-                    rbTest.Visibility = Visibility.Visible;
-                }
+                organizarExtras((int)cboTipoEvento.SelectedValue);
             }
-            
         }
 
-        //Poner valor base y personal base al cambiar modalidad //Corregir con nuevos valores
+        //Poner valor base y personal base al cambiar modalidad
         private void cboModalidad_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if(cboModalidad.SelectedIndex == -1)
@@ -194,8 +226,84 @@ namespace OnBreak
                 var aux = (ModalidadServicios)cboModalidad.SelectedItem;
                 txtPersonalBase.Text = aux.PersonalBase.ToString();
                 txtPrecioBase.Text = aux.Valorbase.ToString();
+                ExpExtras.IsExpanded = true;
             }
             
+        }
+
+        //Organizar el extensor de datos extras
+        private void organizarExtras(int id)
+        {
+            if(id == 0)
+            {
+                chkVegetariano.Visibility = Visibility.Collapsed;
+                chkVegetariano.IsChecked = false;
+                chkAmbientacion.Visibility = Visibility.Collapsed;
+                chkAmbientacion.IsChecked = false;
+                cboAmbientacion.Visibility = Visibility.Collapsed;
+                cboAmbientacion.SelectedIndex = -1;
+                chkMusica.Visibility = Visibility.Collapsed;
+                chkMusica.IsChecked = false;
+                chkMusiCli.Visibility = Visibility.Collapsed;
+                chkMusiCli.IsChecked = false;
+                rbnLocalOnBreak.Visibility = Visibility.Collapsed;
+                rbnLocalOnBreak.IsChecked = true;
+                rbnLocalOtro.Visibility = Visibility.Collapsed;
+                txtValorArriendo.Visibility = Visibility.Collapsed;
+                txtValorArriendo.Text = String.Empty;
+            }
+            else if(id == 10)
+            {
+                chkVegetariano.Visibility = Visibility.Visible;
+                chkAmbientacion.Visibility = Visibility.Collapsed;
+                cboAmbientacion.Visibility = Visibility.Collapsed;
+                chkMusica.Visibility = Visibility.Collapsed;
+                chkMusiCli.Visibility = Visibility.Collapsed;
+                rbnLocalOnBreak.Visibility = Visibility.Collapsed;
+                rbnLocalOtro.Visibility = Visibility.Collapsed;
+                txtValorArriendo.Visibility = Visibility.Collapsed;
+            }
+            else if(id == 20)
+            {
+                chkVegetariano.Visibility = Visibility.Collapsed;
+                chkAmbientacion.Visibility = Visibility.Visible;
+                cboAmbientacion.Visibility = Visibility.Visible;
+                chkMusica.Visibility = Visibility.Visible;
+                chkMusiCli.Visibility = Visibility.Visible;
+                rbnLocalOnBreak.Visibility = Visibility.Collapsed;
+                rbnLocalOtro.Visibility = Visibility.Collapsed;
+                txtValorArriendo.Visibility = Visibility.Collapsed;
+            }
+            else if (id == 30)
+            {
+                chkVegetariano.Visibility = Visibility.Collapsed;
+                chkAmbientacion.Visibility = Visibility.Collapsed;
+                chkAmbientacion.IsChecked = true;
+                cboAmbientacion.Visibility = Visibility.Visible;
+                chkMusica.Visibility = Visibility.Visible;
+                chkMusiCli.Visibility = Visibility.Collapsed;
+                rbnLocalOnBreak.Visibility = Visibility.Visible;
+                rbnLocalOtro.Visibility = Visibility.Visible;
+                txtValorArriendo.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                chkVegetariano.Visibility = Visibility.Collapsed;
+                chkVegetariano.IsChecked = false;
+                chkAmbientacion.Visibility = Visibility.Collapsed;
+                chkAmbientacion.IsChecked = false;
+                cboAmbientacion.Visibility = Visibility.Collapsed;
+                cboAmbientacion.SelectedIndex = -1;
+                chkMusica.Visibility = Visibility.Collapsed;
+                chkMusica.IsChecked = false;
+                chkMusiCli.Visibility = Visibility.Collapsed;
+                chkMusiCli.IsChecked = false;
+                rbnLocalOnBreak.Visibility = Visibility.Collapsed;
+                rbnLocalOnBreak.IsChecked = true;
+                rbnLocalOtro.Visibility = Visibility.Collapsed;
+                txtValorArriendo.Visibility = Visibility.Collapsed;
+                txtValorArriendo.Text = String.Empty;
+            }
         }
         
         //Procedimiento de Calcular
@@ -207,44 +315,195 @@ namespace OnBreak
                 int cantidadPersonal = (int)txtCantPersonalAdicional.Value;
                 int cantidadAsistentes = (int)txtCantidadAsistentes.Value;
                 double precioBase = double.Parse(txtPrecioBase.Text);
-                double recargoAsistentes;
-                double recargoPersonal;
+                double recargoAsistentes = 0;
+                double recargoPersonal = 0;
+
+                TipoEventos aux = (TipoEventos)cboTipoEvento.SelectedItem;
+
 
                 //Calcular Recargo ASistentes
                 if (1 <= cantidadAsistentes && cantidadAsistentes <= 20)
                 {
-                    recargoAsistentes = 3;
+                    switch (aux.Id)
+                    {
+                        case 10:
+                            recargoAsistentes = 3;
+                            break;
+                        case 20:
+                            recargoAsistentes = 4;
+                            break;
+                        case 30:
+                            recargoAsistentes = double.Parse("1,5") * cantidadAsistentes;
+                            break;
+                        default:
+                            break;
+                    }
                 }
                 else if (21 <= cantidadAsistentes && cantidadAsistentes <= 50)
                 {
-                    recargoAsistentes = 5;
+                    switch (aux.Id)
+                    {
+                        case 10:
+                            recargoAsistentes = 5;
+                            break;
+                        case 20:
+                            recargoAsistentes = 6;
+                            break;
+                        case 30:
+                            recargoAsistentes = double.Parse("1,2") * cantidadAsistentes;
+                            break;
+                        default:
+                            break;
+                    }
                 }
                 else
                 {
                     double cantidad = Math.Ceiling((double)(cantidadAsistentes) / 20);
-                    recargoAsistentes = (double)(2 * cantidad);
+                    
+                    switch (aux.Id)
+                    {
+                        case 10:
+                            recargoAsistentes = (double)(2 * cantidad); 
+                            break;
+                        case 20:
+                            recargoAsistentes = (double)(2 * cantidad);
+                            break;
+                        case 30:
+                            recargoAsistentes = cantidadAsistentes;
+                            break;
+                        default:
+                            break;
+                    }
                 }
 
                 //Calcular Recargo Personal
                 if (cantidadPersonal <= 2)
                 {
-                    recargoPersonal = 2;
+                    switch (aux.Id)
+                    {
+                        case 10:
+                            recargoPersonal = 2;
+                            break;
+                        case 20:
+                            recargoPersonal = 2;
+                            break;
+                        case 30:
+                            recargoPersonal = 3;
+                            break;
+                        default:
+                            break;
+                    }
                 }
                 else if (cantidadPersonal == 3)
                 {
-                    recargoPersonal = 3;
+                    switch (aux.Id)
+                    {
+                        case 10:
+                            recargoPersonal = 3;
+                            break;
+                        case 20:
+                            recargoPersonal = 3;
+                            break;
+                        case 30:
+                            recargoPersonal = 4;
+                            break;
+                        default:
+                            break;
+                    }
                 }
                 else if (cantidadPersonal == 4)
                 {
-                    recargoPersonal = double.Parse("3,5");
+                    switch (aux.Id)
+                    {
+                        case 10:
+                            recargoPersonal = double.Parse("3,5");
+                            break;
+                        case 20:
+                            recargoPersonal = double.Parse("3.5");
+                            break;
+                        case 30:
+                            recargoPersonal = 5;
+                            break;
+                        default:
+                            break;
+                    }
                 }
                 else
                 {
-                    recargoPersonal = double.Parse("3,5") + ((cantidadPersonal - 4) * double.Parse("0,5"));
+                    switch (aux.Id)
+                    {
+                        case 10:
+                            recargoPersonal = double.Parse("3,5") + ((cantidadPersonal - 4) * double.Parse("0,5"));
+                            break;
+                        case 20:
+                            recargoPersonal = double.Parse("3,5") + ((cantidadPersonal - 4) * double.Parse("0,5"));
+                            break;
+                        case 30:
+                            recargoPersonal = 5 + ((cantidadPersonal - 4) * double.Parse("0,5"));
+                            break;
+                        default:
+                            break;
+                    }
                 }
 
                 //Calculo
-                double precioTotal = precioBase + recargoAsistentes + recargoPersonal;
+                double precioSubTotal = precioBase + recargoAsistentes + recargoPersonal;
+
+                //Extras
+                //declaración de extras para calculo con switch
+                double extras = 0;
+                double musica = 0;
+                double tipoAmbientacion = 0;
+                double arriendo = 0;
+                switch ((int)cboTipoEvento.SelectedValue)
+                {
+                    case 20:
+                        if(chkAmbientacion.IsChecked == true)
+                        {
+                            if((int)cboAmbientacion.SelectedValue == 10)
+                            {
+                                tipoAmbientacion = 2;
+                            }
+                            else
+                            {
+                                tipoAmbientacion = 5;
+                            }
+                        };
+                        if(chkMusica.IsChecked == true)
+                        {
+                            musica = 1;
+                        };
+                        extras = tipoAmbientacion + musica;
+                        break;
+                    case 30:
+                        if(chkMusica.IsChecked == true)
+                        {
+                            musica = double.Parse("1,5");
+                        };
+                        if ((int)cboAmbientacion.SelectedValue == 10)
+                        {
+                            tipoAmbientacion = 3;
+                        }
+                        else
+                        {
+                            tipoAmbientacion = 5;
+                        };
+                        if(rbnLocalOnBreak.IsChecked == true)
+                        {
+                            arriendo = 9;
+                        }
+                        else
+                        {
+                            arriendo = double.Parse(txtValorArriendo.Text) + (double.Parse(txtValorArriendo.Text) * double.Parse("0,05"));
+                        };
+                        extras = musica + tipoAmbientacion + arriendo;
+                        break;
+                    default:
+                        extras = 0;
+                        break;
+                }
+
+                double precioTotal = precioSubTotal + extras;
 
                 //ingresar valor total
                 txtValorTotal.Text = precioTotal.ToString("n2");
@@ -279,6 +538,49 @@ namespace OnBreak
                 FluentValidation.Results.ValidationResult result = coval.Validate(c);
                 if (result.IsValid == true)
                 {
+                    
+                    if (c.ModalidadServicio.TipoEvento.Id == 10)
+                    {
+                        CoffeBreaks cb = new CoffeBreaks()
+                        {
+                            Numero = c.NumeroContrato,
+                            Vegetariano = (bool)chkVegetariano.IsChecked
+                        };
+                        listaContratos.AgregarExtra(cb);
+                    }
+                    else if (c.ModalidadServicio.TipoEvento.Id == 20)
+                    {
+                        Cocktails cb = new Cocktails()
+                        {
+                            Numero = c.NumeroContrato,
+                            PoseeAmbientacion = (bool)chkAmbientacion.IsChecked,
+                            MusicaAmbiental = (bool)chkMusica.IsChecked,
+                            MusicaCliente = (bool)chkMusiCli.IsChecked
+                        };
+                        if (chkAmbientacion.IsChecked == false)
+                        {
+                            cb.Ambientacion = new Ambientacion(10);
+                        }
+                        else
+                        {
+                            cb.Ambientacion = (Ambientacion)cboAmbientacion.SelectedItem;
+                        }
+                        listaContratos.AgregarExtra(cb);
+                    }
+                    else if(c.ModalidadServicio.TipoEvento.Id == 30)
+                    {
+                        Cena cb = new Cena()
+                        {
+                            Numero = c.NumeroContrato,
+                            Ambientacion = (Ambientacion)cboAmbientacion.SelectedItem,
+                            MusicaAmbiental = (bool)chkMusica.IsChecked,
+                            LocalOnBreak = (bool)rbnLocalOnBreak.IsChecked,
+                            OtroLocal = (bool)rbnLocalOtro.IsChecked,
+                            ValorArriendo = double.Parse(txtValorArriendo.Text)
+                        };
+                        listaContratos.AgregarExtra(cb);
+                    };
+
                     if (listaContratos.GuardarContrato(c) == true)
                     {
                         await this.ShowMessageAsync("Exito", "Contrato Agregado con Exito");
@@ -367,7 +669,9 @@ namespace OnBreak
             txtNumeroContrato.Text = String.Empty;
             txtNumeroGuardar.Text = DateTime.Now.ToString("yyyyMMddHHmm");
             rbVigente.Visibility = Visibility.Hidden;
-            rbTest.Visibility = Visibility.Collapsed;
+            organizarExtras(0);
+            Properties.Settings.Default.respaldo = false;
+            Properties.Settings.Default.Save();
         }
 
         //Limpiar Campos
@@ -475,7 +779,6 @@ namespace OnBreak
         {
             instance = null;
         }
-
         
         //Boton Cache
         private void btnCache_Click(object sender, RoutedEventArgs e)
@@ -486,9 +789,115 @@ namespace OnBreak
         //guardar en cache
         private void guardarCache()
         {
-            //implementar luego del Calculo
+            Properties.Settings.Default.NumeroContrato = txtNumeroContrato.Text;
+            Properties.Settings.Default.RutContrato = txtRut.Text;
+            Properties.Settings.Default.NombreCliente = txtNombreContacto.Text;
+            Properties.Settings.Default.NombreEvento = txtNombreEvento.Text;
+            Properties.Settings.Default.IndexModalidad = (int)cboModalidad.SelectedIndex;
+            Properties.Settings.Default.IndexTipoEvento = (int)cboTipoEvento.SelectedIndex;
+            Properties.Settings.Default.Direccion = txtDireccion.Text;
+            Properties.Settings.Default.Asistentes = (double)txtCantidadAsistentes.Value;
+            Properties.Settings.Default.PAdicional = (double)txtCantPersonalAdicional.Value;
+            Properties.Settings.Default.Valor = double.Parse(txtValorTotal.Text);
+            Properties.Settings.Default.Observaciones = txtObservaciones.Text;
+            Properties.Settings.Default.FInicio = dpFechaInicio.SelectedDate.Value;
+            Properties.Settings.Default.FTermino = dpFechaTermino.SelectedDate.Value;
+            Properties.Settings.Default.Vegetariano = (bool)chkVegetariano.IsChecked;
+            Properties.Settings.Default.Ambientacion = (bool)chkAmbientacion.IsChecked;
+            Properties.Settings.Default.IndexAmbientacion = (int)cboAmbientacion.SelectedIndex;
+            Properties.Settings.Default.Musica = (bool)chkMusica.IsChecked;
+            Properties.Settings.Default.MusicaCliente = (bool)chkMusiCli.IsChecked;
+            Properties.Settings.Default.LocalOnBreak = (bool)rbnLocalOnBreak.IsChecked;
+            Properties.Settings.Default.LocalOtro = (bool)rbnLocalOtro.IsChecked;
+            Properties.Settings.Default.ValorArriendo = double.Parse(txtValorArriendo.Text);
+            Properties.Settings.Default.respaldo = true;
+            Properties.Settings.Default.Save();
         }
 
+        //Traer Cache
+        private async void recuperar()
+        {
+            if (Properties.Settings.Default.respaldo == true)
+            {
+                var result = await this.ShowMessageAsync("Respaldo Encontrado", "Se ha encontrado un respaldo de la información Realizada. ¿Desea Cargarlo?", MessageDialogStyle.AffirmativeAndNegative);
+                if (result == MessageDialogResult.Affirmative)
+                {
+                    txtNumeroContrato.Text = Properties.Settings.Default.NumeroContrato.ToString();
+                    txtRut.Text = Properties.Settings.Default.RutContrato.ToString();
+                    txtNombreContacto.Text = Properties.Settings.Default.NombreCliente.ToString();
+                    txtNombreEvento.Text = Properties.Settings.Default.NombreEvento.ToString();
+                    cboTipoEvento.SelectedIndex = -1;
+                    cboTipoEvento.SelectedIndex = (int)Properties.Settings.Default.IndexTipoEvento;
+                    cboModalidad.SelectedIndex = -1;
+                    cboModalidad.SelectedIndex = (int)Properties.Settings.Default.IndexModalidad;
+                    txtDireccion.Text = Properties.Settings.Default.Direccion.ToString();
+                    txtCantidadAsistentes.Value = (double)Properties.Settings.Default.Asistentes;
+                    txtCantPersonalAdicional.Value = (double)Properties.Settings.Default.PAdicional;
+                    txtValorTotal.Text = Properties.Settings.Default.Valor.ToString("n2");
+                    txtObservaciones.Text = Properties.Settings.Default.Observaciones.ToString();
+                    dpFechaInicio.SelectedDate = Properties.Settings.Default.FInicio;
+                    dpFechaTermino.SelectedDate = Properties.Settings.Default.FTermino;
+                    chkVegetariano.IsChecked = (bool)Properties.Settings.Default.Vegetariano;
+                    chkAmbientacion.IsChecked = (bool)Properties.Settings.Default.Ambientacion;
+                    cboAmbientacion.SelectedIndex = -1;
+                    cboAmbientacion.SelectedIndex = Properties.Settings.Default.IndexAmbientacion;
+                    chkMusica.IsChecked = (bool)Properties.Settings.Default.Musica;
+                    chkMusiCli.IsChecked = (bool)Properties.Settings.Default.MusicaCliente;
+                    rbnLocalOnBreak.IsChecked = (bool)Properties.Settings.Default.LocalOnBreak;
+                    rbnLocalOtro.IsChecked = (bool)Properties.Settings.Default.LocalOtro;
+                    txtValorArriendo.Text = Properties.Settings.Default.ValorArriendo.ToString("n2");
+                }
+                else
+                {
+                    var result2 = await this.ShowMessageAsync("Desechar Respaldo", "¿Desea Desechar la información de Respaldo?", MessageDialogStyle.AffirmativeAndNegative);
+                    if (result2 == MessageDialogResult.Affirmative)
+                    {
+                        Properties.Settings.Default.NumeroContrato = String.Empty;
+                        Properties.Settings.Default.RutContrato = String.Empty;
+                        Properties.Settings.Default.NombreCliente = String.Empty;
+                        Properties.Settings.Default.NombreEvento = String.Empty;
+                        Properties.Settings.Default.IndexModalidad = 0;
+                        Properties.Settings.Default.IndexTipoEvento = 0;
+                        Properties.Settings.Default.Direccion = String.Empty;
+                        Properties.Settings.Default.Asistentes = 0;
+                        Properties.Settings.Default.PAdicional = 0;
+                        Properties.Settings.Default.Valor = 0;
+                        Properties.Settings.Default.Observaciones = String.Empty;
+                        Properties.Settings.Default.FInicio = DateTime.Now;
+                        Properties.Settings.Default.FTermino = DateTime.Now;
+                        Properties.Settings.Default.Vegetariano = false;
+                        Properties.Settings.Default.Ambientacion = false;
+                        Properties.Settings.Default.IndexAmbientacion = 0;
+                        Properties.Settings.Default.Musica = false;
+                        Properties.Settings.Default.MusicaCliente = false;
+                        Properties.Settings.Default.LocalOnBreak = false;
+                        Properties.Settings.Default.LocalOtro = false;
+                        Properties.Settings.Default.ValorArriendo = 0;
+                        Properties.Settings.Default.respaldo = false;
+                        Properties.Settings.Default.Save();
+                    }
+                }
+            }
+        }
+            
+        private void MetroWindow_Closed(object sender, EventArgs e)
+        {
+            guardarCache();
+            Properties.Settings.Default.AltoContraste = (bool)altoContraste.IsChecked;
+            Properties.Settings.Default.Save();
+        }
+
+        //Habilitar y Deshabilitar Cbo Tipo AMbientacion
+        private void chkAmbientacion_Checked(object sender, RoutedEventArgs e)
+        {
+            cboAmbientacion.IsEnabled = true;
+        }
+
+        private void chkAmbientacion_Unchecked(object sender, RoutedEventArgs e)
+        {
+            cboAmbientacion.IsEnabled = false;
+            cboAmbientacion.SelectedIndex = -1;
+        }
 
         //Metodo para evitar string en donde debe haber solo numero, extraido de internet
         //private void txtCantPersonalAdicional_KeyDown(object sender, System.Windows.Input.KeyEventArgs e)

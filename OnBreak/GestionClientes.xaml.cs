@@ -47,6 +47,8 @@ namespace OnBreak
             instance = this;
             cboActividadEmpresa.ItemsSource = listaClientes.ListarActividadEmpresas();
             cboTipoEmpresa.ItemsSource = listaClientes.ListarTipoEmpresas();
+            this.altoContraste.IsChecked = Properties.Settings.Default.AltoContraste;
+            altoContrasteIsActive();
         }
 
         //Funcion de Validacion de Rut
@@ -351,6 +353,12 @@ namespace OnBreak
         private void MetroWindow_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             instance = null;
+        }
+
+        private void MetroWindow_Closed(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.AltoContraste = (bool)altoContraste.IsChecked;
+            Properties.Settings.Default.Save();
         }
 
         ////Validar que los campos requeridos no esten vacios, además de mostrar 

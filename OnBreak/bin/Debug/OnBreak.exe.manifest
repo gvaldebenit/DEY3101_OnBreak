@@ -42,14 +42,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ClassBiblioteca.dll" size="35840">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ClassBiblioteca.dll" size="37376">
       <assemblyIdentity name="ClassBiblioteca" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>Z80Pk9EiIRx+fAXOiUV1RHaSG95JN1tNssfhf2k2uwo=</dsig:DigestValue>
+        <dsig:DigestValue>qLEbsIkWSxNgCHMixWDqiu7I/NdgtrGLGy0ujktnFsk=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -378,14 +378,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="OnBreak.exe" size="4976632">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="OnBreak.exe" size="4978168">
       <assemblyIdentity name="OnBreak" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>VN917GE++hF5+h3jezeqZiGPk6wTE1m4NsoG2RuBzko=</dsig:DigestValue>
+        <dsig:DigestValue>D6syvCqlm6GU3CTR9PGb4BHZcAozBVDNjWzJoc+hxIA=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

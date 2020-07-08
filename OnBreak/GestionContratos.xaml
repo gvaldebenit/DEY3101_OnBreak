@@ -9,7 +9,7 @@
         mc:Ignorable="d"
         BorderThickness="0" 
         GlowBrush="Black"
-        Title="Gestion de Contratos" Height="677" Width="576" Background="#FFC5DEEA" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Icon="Resources/Icons/white_logo_color_background.jpg" Closing="MetroWindow_Closing">
+        Title="Gestion de Contratos" Height="677" Width="576" Background="#FFC5DEEA" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Icon="Resources/Icons/white_logo_color_background.jpg" Closing="MetroWindow_Closing" Closed="MetroWindow_Closed">
     
     <Grid Margin="1,0,1,2">
         <Grid.RowDefinitions>
@@ -44,6 +44,7 @@
 
             <Label x:Name="lblTipoEvento" Content="Tipo Evento" HorizontalAlignment="Left" Margin="0,20,0,0" VerticalAlignment="Center"/>
             <Label x:Name="lblModalidad" Content="Modalidad" HorizontalAlignment="Left" Margin="0,5,0,0" VerticalAlignment="Center"/>
+            
             <Label x:Name="lblPrecioBase" Content="Precio Base" HorizontalAlignment="Left" Margin="0,5,0,0" VerticalAlignment="Center"/>
             <Label x:Name="lblPersonalBase" Content="Personal Base" HorizontalAlignment="Left" Margin="0,5,0,0" VerticalAlignment="Center"/>
             <Label x:Name="lblCantidadAsistentes" Content="Cantidad Asistentes" HorizontalAlignment="Left" Margin="0,5,0,0" VerticalAlignment="Center"/>
@@ -73,7 +74,6 @@
             <TextBox x:Name="txtPersonalBase" HorizontalAlignment="Left" Height="23" Margin="0,5,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="175" IsEnabled="False" IsReadOnly="True" Controls:TextBoxHelper.Watermark="Elija Modalidad Primero"/>
             <Controls:NumericUpDown x:Name="txtCantidadAsistentes" Minimum="1" HorizontalAlignment="Left" HorizontalContentAlignment="Left" Height="23" Margin="0,5,0,0" VerticalAlignment="Top" Width="175" />
             <Controls:NumericUpDown x:Name="txtCantPersonalAdicional" Minimum="0" HorizontalAlignment="Left" HorizontalContentAlignment="Left" Height="23" Margin="0,5,0,0" VerticalAlignment="Top" Width="175"/>
-            <RadioButton x:Name="rbTest" Margin=" 0,5,0,0" IsEnabled="False" Visibility="Collapsed"/>
             <TextBox x:Name="txtValorTotal" HorizontalAlignment="Left" Height="23" Margin="0,5,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="175" IsReadOnly="True" Controls:TextBoxHelper.Watermark="Presione Calcular"/>
 
             <Controls:DateTimePicker x:Name="dpFechaInicio" HorizontalAlignment="Left" Margin="0,10,0,0" VerticalAlignment="Top" Height ="26" Width="175" FirstDayOfWeek="Monday" Controls:TextBoxHelper.Watermark="Selecione una Fecha"/>
@@ -92,15 +92,27 @@
                 <Button x:Name="btnBuscarNumeroContrato" Content="Buscar" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Width="75" Height="25" Click="btnBuscarNumeroContrato_Click"/>
                 <Button x:Name="btnListado2" Content="Listado" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" Width="75" Height="25" Click="btnListado2_Click"/>
             </StackPanel>
-            <RadioButton x:Name="rbVigente" Margin ="0,5,0,0" IsEnabled="False" Focusable="False" Visibility="Hidden"/>
+            <RadioButton x:Name="rbVigente" Margin ="0,5,0,0" IsEnabled="False" Focusable="False" Visibility="Hidden" Height="Auto"/>
         </StackPanel>
 
-        <Image Source="/Resources/Icons/logo_transparent_background.png" Margin="31,3,32,89" Grid.Column="5" Grid.Row="3" Grid.RowSpan="2"/>
-
+        <!--Image Source="/Resources/Icons/logo_transparent_background.png" Margin="31,3,32,89" Grid.Column="5" Grid.Row="3" Grid.RowSpan="2"/-->
+        <!-- Control para los Datos Extras -->
+        <Expander x:Name="ExpExtras" Margin="0,0,10,0" Grid.Column="5" Grid.Row="4" Header="_Datos Extras" IsExpanded="False">
+            <StackPanel>
+                <CheckBox x:Name="chkVegetariano" Content="Alimentación Vegetariana" Margin="5,5,0,0" Visibility="Collapsed"/>
+                <CheckBox x:Name="chkAmbientacion" Content="Ambientación" Margin="5,5,0,0" Visibility="Collapsed" IsEnabled="False" Checked="chkAmbientacion_Checked" Unchecked="chkAmbientacion_Unchecked"/>
+                <ComboBox x:Name="cboAmbientacion" Margin="0,5,0,0" Controls:TextBoxHelper.Watermark="Seleccione Ambientación" DisplayMemberPath="Descripcion" SelectedValuePath="IdAmbientacion"  Controls:ComboBoxHelper.EnableVirtualizationWithGrouping="True" Visibility="Collapsed"/>
+                <CheckBox x:Name="chkMusica" Content="Musica Ambiental" Margin="5,5,0,0" Visibility="Collapsed" />
+                <CheckBox x:Name="chkMusiCli" Content="Musica del Cliente" Margin="5,5,0,0" Visibility="Collapsed"/>
+                <RadioButton x:Name="rbnLocalOnBreak" Content ="Local OnBreak" Margin="5,5,0,0" GroupName="LocalEvento" Visibility="Collapsed"/>
+                <RadioButton x:Name="rbnLocalOtro" Content ="Otro Local" Margin="5,5,0,0" GroupName="LocalEvento" Visibility="Collapsed"/>
+                <TextBox x:Name="txtValorArriendo" Controls:TextBoxHelper.Watermark="Ingrese Valor Arriendo" Visibility="Collapsed"/>
+            </StackPanel>
+        </Expander> 
         <Button x:Name="btnCalcular" Content="Calcular" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Bottom" Width="75" Height="25" Click="btnCalcular_Click" Grid.Column="5" Grid.Row="4"/>
 
 
-        <!-- Resto de Botones Verticales-->
+        <!-- Resto de Botones Horizontales-->
         <StackPanel Orientation="Horizontal" Grid.Row="8" Grid.Column="1" Grid.ColumnSpan="5" >
             <Button x:Name="btnTerminar" Content="Terminar" HorizontalAlignment="Left" Margin="20,2,0,0" VerticalAlignment="Top" Width="75" Click="btnTerminar_Click" Height="26"/>
             <Button x:Name="btnLimpiar" Content="Limpiar" HorizontalAlignment="Left" Margin="56,2,0,0" VerticalAlignment="Top" Width="75" Click="btnLimpiar_Click" Height="26"/>

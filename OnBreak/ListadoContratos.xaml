@@ -8,7 +8,7 @@
         mc:Ignorable="d"
         BorderThickness="0" 
         GlowBrush="Black"              
-        Title="Listado de Contratos" Height="352.91" Width="878.133" Background="#FFC5DEEA" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" SizeToContent="Height" Icon="Resources/Icons/white_logo_color_background.jpg" Closing="MetroWindow_Closing">
+        Title="Listado de Contratos" Height="352.91" Width="878.133" Background="#FFC5DEEA" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" SizeToContent="Height" Icon="Resources/Icons/white_logo_color_background.jpg" Closing="MetroWindow_Closing" Closed="MetroWindow_Closed">
 
     <Grid>
         <Grid.ColumnDefinitions>
