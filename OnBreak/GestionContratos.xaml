@@ -97,16 +97,16 @@
 
         <!--Image Source="/Resources/Icons/logo_transparent_background.png" Margin="31,3,32,89" Grid.Column="5" Grid.Row="3" Grid.RowSpan="2"/-->
         <!-- Control para los Datos Extras -->
-        <Expander x:Name="ExpExtras" Margin="0,0,10,0" Grid.Column="5" Grid.Row="4" Header="_Datos Extras" IsExpanded="False">
+        <Expander x:Name="ExpExtras" Margin="0,0,10,30" Grid.Column="5" Grid.Row="4" Header="_Datos Extras" IsExpanded="False">
             <StackPanel>
                 <CheckBox x:Name="chkVegetariano" Content="Alimentación Vegetariana" Margin="5,5,0,0" Visibility="Collapsed"/>
-                <CheckBox x:Name="chkAmbientacion" Content="Ambientación" Margin="5,5,0,0" Visibility="Collapsed" IsEnabled="False" Checked="chkAmbientacion_Checked" Unchecked="chkAmbientacion_Unchecked"/>
+                <CheckBox x:Name="chkAmbientacion" Content="Ambientación" Margin="5,5,0,0" Visibility="Collapsed" Checked="chkAmbientacion_Checked" Unchecked="chkAmbientacion_Unchecked"/>
                 <ComboBox x:Name="cboAmbientacion" Margin="0,5,0,0" Controls:TextBoxHelper.Watermark="Seleccione Ambientación" DisplayMemberPath="Descripcion" SelectedValuePath="IdAmbientacion"  Controls:ComboBoxHelper.EnableVirtualizationWithGrouping="True" Visibility="Collapsed"/>
                 <CheckBox x:Name="chkMusica" Content="Musica Ambiental" Margin="5,5,0,0" Visibility="Collapsed" />
                 <CheckBox x:Name="chkMusiCli" Content="Musica del Cliente" Margin="5,5,0,0" Visibility="Collapsed"/>
                 <RadioButton x:Name="rbnLocalOnBreak" Content ="Local OnBreak" Margin="5,5,0,0" GroupName="LocalEvento" Visibility="Collapsed"/>
                 <RadioButton x:Name="rbnLocalOtro" Content ="Otro Local" Margin="5,5,0,0" GroupName="LocalEvento" Visibility="Collapsed"/>
-                <TextBox x:Name="txtValorArriendo" Controls:TextBoxHelper.Watermark="Ingrese Valor Arriendo" Visibility="Collapsed"/>
+                <TextBox x:Name="txtValorArriendo" Margin ="5,5,0,0"  Controls:TextBoxHelper.Watermark="Ingrese Valor Arriendo" Visibility="Collapsed"/>
             </StackPanel>
         </Expander> 
         <Button x:Name="btnCalcular" Content="Calcular" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Bottom" Width="75" Height="25" Click="btnCalcular_Click" Grid.Column="5" Grid.Row="4"/>

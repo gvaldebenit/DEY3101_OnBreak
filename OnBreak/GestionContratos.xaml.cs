@@ -56,8 +56,8 @@ namespace OnBreak
             AuxiliarClases.NotificationCenter.Subscribe("ListadoContratos", actualizarDG);
             organizarExtras(0);
             recuperar();
-            Properties.Settings.Default.AltoContraste = (bool)altoContraste.IsChecked;
-            Properties.Settings.Default.Save();
+            this.altoContraste.IsChecked = Properties.Settings.Default.AltoContraste;
+            altoContrasteIsActive();
         }
 
         //Actualizar Datagrids
@@ -240,6 +240,7 @@ namespace OnBreak
                 chkVegetariano.IsChecked = false;
                 chkAmbientacion.Visibility = Visibility.Collapsed;
                 chkAmbientacion.IsChecked = false;
+                chkAmbientacion.IsEnabled = true;
                 cboAmbientacion.Visibility = Visibility.Collapsed;
                 cboAmbientacion.SelectedIndex = -1;
                 chkMusica.Visibility = Visibility.Collapsed;
@@ -267,6 +268,7 @@ namespace OnBreak
             {
                 chkVegetariano.Visibility = Visibility.Collapsed;
                 chkAmbientacion.Visibility = Visibility.Visible;
+                chkAmbientacion.IsEnabled = true;
                 cboAmbientacion.Visibility = Visibility.Visible;
                 chkMusica.Visibility = Visibility.Visible;
                 chkMusiCli.Visibility = Visibility.Visible;

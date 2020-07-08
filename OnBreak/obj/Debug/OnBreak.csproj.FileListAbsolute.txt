@@ -113,5 +113,3 @@ C:\Users\Yhodarks\source\repos\OnBreak\OnBreak\bin\Debug\MahApps.Metro.IconPacks
 C:\Users\Yhodarks\source\repos\OnBreak\OnBreak\bin\Debug\MahApps.Metro.IconPacks.WeatherIcons.xml
 C:\Users\Yhodarks\source\repos\OnBreak\OnBreak\bin\Debug\MahApps.Metro.IconPacks.Zondicons.pdb
 C:\Users\Yhodarks\source\repos\OnBreak\OnBreak\bin\Debug\MahApps.Metro.IconPacks.Zondicons.xml
-C:\Users\Yhodarks\source\repos\OnBreak\OnBreak\bin\Debug\DataBaseLocal.mdf
-C:\Users\Yhodarks\source\repos\OnBreak\OnBreak\bin\Debug\DataBaseLocal_log.ldf

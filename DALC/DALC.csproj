@@ -141,11 +141,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="DataBaseLocal.mdf">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="DataBaseLocal_log.ldf">
       <DependentUpon>DataBaseLocal.mdf</DependentUpon>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="OnBreakEntities.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>

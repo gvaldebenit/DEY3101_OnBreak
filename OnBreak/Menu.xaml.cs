@@ -40,8 +40,8 @@ namespace OnBreak
         {
             InitializeComponent();
             instance = this;
-            Properties.Settings.Default.AltoContraste = (bool)altoContraste.IsChecked;
-            Properties.Settings.Default.Save();
+            this.altoContraste.IsChecked = Properties.Settings.Default.AltoContraste;
+            altoContrasteIsActive();
         }
 
         //Ventana Gestion Clientes
@@ -127,5 +127,6 @@ namespace OnBreak
             Properties.Settings.Default.AltoContraste = (bool)altoContraste.IsChecked;
             Properties.Settings.Default.Save();
         }
+
     }
 }
